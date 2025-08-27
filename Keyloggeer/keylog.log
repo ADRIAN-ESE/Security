@@ -1,0 +1,792 @@
+DEBUG:root:Key pressed: m
+DEBUG:root:Key pressed: a
+DEBUG:root:Key pressed: r
+DEBUG:root:Key pressed: k
+DEBUG:root:Special key pressed: Key.enter
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.right
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Key pressed: l
+DEBUG:root:Key pressed: a
+DEBUG:root:Key pressed: s
+DEBUG:root:Key pressed: t
+DEBUG:root:Special key pressed: Key.space
+DEBUG:root:Key pressed: o
+DEBUG:root:Key pressed: f
+DEBUG:root:Special key pressed: Key.space
+DEBUG:root:Key pressed: u
+DEBUG:root:Key pressed: d
+DEBUG:root:Special key pressed: Key.enter
+DEBUG:root:Key pressed: 1
+DEBUG:root:Special key pressed: Key.enter
+DEBUG:root:Key pressed: z
+DEBUG:root:Key pressed: e
+DEBUG:root:Key pressed: r
+DEBUG:root:Key pressed: o
+DEBUG:root:Special key pressed: Key.enter
+DEBUG:root:Key pressed: l
+DEBUG:root:Key pressed: o
+DEBUG:root:Key pressed: s
+DEBUG:root:Key pressed: t
+DEBUG:root:Key pressed: 1
+DEBUG:root:Key pressed: 2
+DEBUG:root:Key pressed: 3
+DEBUG:root:Special key pressed: Key.enter
+DEBUG:root:Key pressed: 2
+DEBUG:root:Special key pressed: Key.enter
+DEBUG:root:Key pressed: z
+DEBUG:root:Key pressed: e
+DEBUG:root:Key pressed: r
+DEBUG:root:Key pressed: o
+DEBUG:root:Special key pressed: Key.enter
+DEBUG:root:Key pressed: l
+DEBUG:root:Key pressed: o
+DEBUG:root:Key pressed: s
+DEBUG:root:Key pressed: t
+DEBUG:root:Key pressed: 1
+DEBUG:root:Key pressed: 2
+DEBUG:root:Key pressed: 3
+DEBUG:root:Special key pressed: Key.enter
+DEBUG:root:Key pressed: 2
+DEBUG:root:Special key pressed: Key.enter
+DEBUG:root:Key pressed: z
+DEBUG:root:Key pressed: e
+DEBUG:root:Key pressed: r
+DEBUG:root:Key pressed: o
+DEBUG:root:Special key pressed: Key.enter
+DEBUG:root:Key pressed: w
+DEBUG:root:Key pressed: e
+DEBUG:root:Key pressed: r
+DEBUG:root:Key pressed: f
+DEBUG:root:Key pressed: d
+DEBUG:root:Special key pressed: Key.enter
+DEBUG:root:Key pressed: 3
+DEBUG:root:Special key pressed: Key.enter
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.enter
+DEBUG:root:Special key pressed: Key.shift
+DEBUG:root:Key pressed: M
+DEBUG:root:Key pressed: a
+DEBUG:root:Key pressed: d
+DEBUG:root:Key pressed: d
+DEBUG:root:Special key pressed: Key.space
+DEBUG:root:Key pressed: m
+DEBUG:root:Key pressed: a
+DEBUG:root:Key pressed: x
+DEBUG:root:Key pressed: x
+DEBUG:root:Special key pressed: Key.space
+DEBUG:root:Key pressed: 1
+DEBUG:root:Key pressed: 0
+DEBUG:root:Key pressed: 0
+DEBUG:root:Special key pressed: Key.enter
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.up
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Key pressed: t
+DEBUG:root:Key pressed: i
+DEBUG:root:Key pressed: m
+DEBUG:root:Key pressed: w
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Key pressed: e
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.enter
+DEBUG:root:Key pressed: i
+DEBUG:root:Key pressed: m
+DEBUG:root:Key pressed: [
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.backspace
+DEBUG:root:Special key pressed: Key.shift
+DEBUG:root:Key pressed: I
+DEBUG:root:Key pressed: m
+DEBUG:root:Key pressed: p
+DEBUG:root:Key pressed: r
+DEBUG:root:Key pressed: o
+DEBUG:root:Key pressed: v
+DEBUG:root:Key pressed: e
+DEBUG:root:Special key pressed: Key.space
+DEBUG:root:Key pressed: t
+DEBUG:root:Key pressed: h
+DEBUG:root:Key pressed: i
+DEBUG:root:Key pressed: s
+DEBUG:root:Special key pressed: Key.space
+DEBUG:root:Special key pressed: Key.enter
+DEBUG:root:Special key pressed: Key.shift_r
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.down
+DEBUG:root:Special key pressed: Key.ctrl_l
+DEBUG:root:Special key pressed: Key.ctrl_l
+DEBUG:root:Special key pressed: Key.ctrl_l
+DEBUG:root:Special key pressed: Key.ctrl_l
+DEBUG:root:Special key pressed: Key.ctrl_l
+DEBUG:root:Special key pressed: Key.ctrl_l
+DEBUG:root:Special key pressed: Key.ctrl_l
+DEBUG:root:Special key pressed: Key.ctrl_l
+DEBUG:root:Special key pressed: Key.ctrl_l
+DEBUG:root:Special key pressed: Key.ctrl_l
+DEBUG:root:Special key pressed: Key.ctrl_l
+DEBUG:root:Special key pressed: Key.ctrl_l
+DEBUG:root:Special key pressed: Key.ctrl_l
+DEBUG:root:Special key pressed: Key.ctrl_l
+DEBUG:root:Special key pressed: Key.ctrl_l
+DEBUG:root:Key pressed: 
+DEBUG:root:Special key pressed: Key.ctrl_l
+DEBUG:root:Key pressed: 
+DEBUG:root:Special key pressed: Key.enter
+DEBUG:root:Special key pressed: Key.down

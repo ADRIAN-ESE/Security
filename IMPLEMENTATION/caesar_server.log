@@ -1,0 +1,36 @@
+2024-10-03 15:06:26,961 - caesar_server - INFO - Server listening on port 12345...
+2024-10-03 15:06:33,875 - caesar_server - INFO - Connected to ('127.0.0.1', 50684)
+2024-10-03 15:06:52,385 - caesar_server - INFO - Client:  GOOD DAY MR,65
+2024-10-03 16:16:24,254 - caesar_server - INFO - Server listening on port 12345...
+2024-10-03 16:16:28,275 - caesar_server - INFO - Connected to ('127.0.0.1', 52057)
+2024-10-03 16:16:57,052 - caesar_server - INFO - Client: GREETING COMRADE
+2024-10-03 16:17:27,443 - caesar_server - INFO - Server: HELLO
+2024-10-03 16:17:27,444 - caesar_server - INFO - Client: IS MISSION GOING SMOOTHLY
+2024-10-03 16:17:39,099 - caesar_server - INFO - Server: YES
+2024-10-03 16:18:01,267 - caesar_server - INFO - Client: 1
+2024-10-03 16:18:13,482 - caesar_server - INFO - Server: 3
+2024-10-03 16:18:27,019 - caesar_server - INFO - Client: SECURE
+2024-10-03 16:18:33,835 - caesar_server - INFO - Server: 3
+2024-10-03 16:18:41,363 - caesar_server - INFO - Client: YES
+2024-10-03 16:18:51,978 - caesar_server - INFO - Server: CONFRIMED
+2024-10-03 16:22:44,945 - caesar_server - INFO - Disconnected from ('127.0.0.1', 52057)
+2025-03-05 23:37:16,295 - caesar_server - INFO - Server listening on port 12345...
+2025-03-05 23:37:22,734 - caesar_server - INFO - Connected to ('127.0.0.1', 57624)
+2025-03-05 23:37:52,266 - caesar_server - INFO - Client: Good Morning
+2025-03-05 23:39:08,058 - caesar_server - INFO - Server listening on port 12345...
+2025-03-05 23:39:37,719 - caesar_server - INFO - Connected to ('127.0.0.1', 57631)
+2025-03-05 23:40:00,415 - caesar_server - INFO - Client: hello
+2025-03-05 23:40:00,415 - caesar_server - INFO - Server: Good Morning
+2025-03-05 23:40:54,239 - caesar_server - INFO - Client: i requre assistance
+2025-03-05 23:40:54,240 - caesar_server - INFO - Server: How May We Help You
+2025-03-05 23:41:19,341 - caesar_server - INFO - Disconnected from ('127.0.0.1', 57631)
+2025-03-06 18:25:43,515 - caesar_server - INFO - Server listening on port 12345...
+2025-03-06 18:25:49,316 - caesar_server - INFO - Connected to ('127.0.0.1', 63391)
+2025-03-06 18:26:35,093 - caesar_server - INFO - Client: Good Morning
+2025-03-06 18:26:51,835 - caesar_server - INFO - Server: Morning
+2025-03-06 18:27:29,659 - caesar_server - INFO - Client: I requrie assistance
+2025-03-06 18:27:57,067 - caesar_server - INFO - Server: All right
+2025-03-06 18:28:15,448 - caesar_server - INFO - Disconnected from ('127.0.0.1', 63391)
+2025-06-17 20:03:51,233 - caesar_server - INFO - Server listening on port 12345...
+2025-06-17 20:04:00,584 - caesar_server - INFO - Connected to ('127.0.0.1', 49763)
+2025-06-17 20:04:07,556 - caesar_server - INFO - Client: Hello
