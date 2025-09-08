@@ -110,7 +110,7 @@ def main():
     Provides options for hashing a password, dictionary attack, or brute-force attack.
     """
     print("---------------------------------------")
-    print("      Python Hashed Password Cracker   ")
+    print("      Password Cracker   ")
     print("---------------------------------------")
 
     while True:
@@ -164,3 +164,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
