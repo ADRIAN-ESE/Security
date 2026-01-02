@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Password Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <h1>🔑 Admin Password Manager</h1>
+
+  <!-- Unlock / Admin Section -->
+  <div id="unlockSection">
+    <input type="password" id="masterPassword" placeholder="Enter Master Password">
+    <button onclick="unlockManager()">Unlock</button>
+  </div>
+
+  <!-- Manager Section -->
+  <div id="manager" style="display:none;">
+    <div class="top-bar">
+      <input type="text" id="search" placeholder="Search by site or username" oninput="filterEntries()">
+      <button onclick="toggleTheme()">Toggle Dark/Light</button>
+    </div>
+
+    <div class="entry-form">
+      <input type="text" id="site" placeholder="Site/Service">
+      <input type="text" id="username" placeholder="Username">
+      <input type="text" id="password" placeholder="Password">
+      <div id="passwordStrength">Password Strength: </div>
+      <button onclick="generatePassword()">Generate Password</button>
+      <button onclick="saveEntry()">Save Entry</button>
+    </div>
+
+    <table id="passwordTable">
+      <thead>
+      <tr>
+        <th>Site</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Strength</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
