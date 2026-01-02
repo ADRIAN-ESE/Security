@@ -1,0 +1,9 @@
+[2025-12-14 22:42:20] [INFO] Creating baseline for ./target_files
+[2025-12-14 22:42:21] [INFO] Baseline created with 9 files
+[2025-12-14 22:42:49] [INFO] Starting File Integrity Monitoring
+[2025-12-14 22:43:07] [CRITICAL] DELETED FILE: ./target_files\New folder\1_-_Red_Rising_-_Pierce_Brown.epub
+[2025-12-14 22:43:07] [CRITICAL] DELETED FILE: ./target_files\New folder\2_-_Golden_Son_-_Pierce_Brown.epub
+[2025-12-14 22:43:07] [CRITICAL] DELETED FILE: ./target_files\New folder\3_-_Morning_Star_-_Pierce_Brown.epub
+[2025-12-14 22:43:57] [CRITICAL] DELETED FILE: ./target_files\New Text Document.txt
+[2025-12-14 22:44:25] [CRITICAL] NEW FILE: ./target_files\New folder (2)\New Text Document.txt
+[2025-12-14 22:44:31] [CRITICAL] NEW FILE: ./target_files\New folder (2)\New Text Document (2).txt

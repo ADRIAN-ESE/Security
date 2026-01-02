@@ -1,0 +1,56 @@
+{
+    "./target_files\\Howling_Dark_-_Christopher_Ruocchio.epub": {
+        "size": 903940,
+        "mtime": 1718407984.0,
+        "permissions": "-rw-rw-rw-",
+        "hash": "fb4fa5274bcf70dfdc058631c527769e1257ee9811b849beb69a37e7f549be52"
+    },
+    "./target_files\\Kingdoms_of_Death_-_Christopher_Ruocchio.pdf": {
+        "size": 3228533,
+        "mtime": 1727784869.9029975,
+        "permissions": "-rw-rw-rw-",
+        "hash": "c87fb358030d8c0befef80e62acf1d940dd87602e96b3373879c4105ada09cf9"
+    },
+    "./target_files\\New Text Document.txt": {
+        "size": 0,
+        "mtime": 1765747406.5032954,
+        "permissions": "-rw-rw-rw-",
+        "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "./target_files\\New folder\\1_-_Red_Rising_-_Pierce_Brown.epub": {
+        "size": 1995610,
+        "mtime": 1693175637.0,
+        "permissions": "-rw-rw-rw-",
+        "hash": "a8c313eda9ceca626e8a13f3f959aead4bc0918c19b3d8839b7506085e136858"
+    },
+    "./target_files\\New folder\\2_-_Golden_Son_-_Pierce_Brown.epub": {
+        "size": 1418652,
+        "mtime": 1693175861.0,
+        "permissions": "-rw-rw-rw-",
+        "hash": "12db1892e9270ed720e31ae33cdca62e97c116252daf083364eb079195c80711"
+    },
+    "./target_files\\New folder\\3_-_Morning_Star_-_Pierce_Brown.epub": {
+        "size": 5697594,
+        "mtime": 1693175871.0,
+        "permissions": "-rw-rw-rw-",
+        "hash": "c48a7164148e6192e00c16819bb8c2ac7cd96592b0bcc7569871a98942c162a3"
+    },
+    "./target_files\\New folder\\4_-_Iron_Gold_-_Pierce_Brown.epub": {
+        "size": 3932598,
+        "mtime": 1693175871.0,
+        "permissions": "-rw-rw-rw-",
+        "hash": "bc143cef96fccd62e798a8ca5a9d5babf4516c3df024068ee281ba400da1565f"
+    },
+    "./target_files\\New folder\\5_-_Dark_Age_-_Pierce_Brown.epub": {
+        "size": 4535247,
+        "mtime": 1693175876.0,
+        "permissions": "-rw-rw-rw-",
+        "hash": "16c85a713e2f806441b0f615b37771c21498c473ca4cd605809c9194155636a5"
+    },
+    "./target_files\\New folder\\6_Light_Bringer_-_Pierce_Brown.epub": {
+        "size": 2966918,
+        "mtime": 1693176256.0,
+        "permissions": "-rw-rw-rw-",
+        "hash": "cf3315512da95d0168eb317610dd3b369d7187e6bcb5876a787add4a2992f614"
+    }
+}
