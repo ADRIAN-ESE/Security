@@ -1,0 +1,107 @@
+:root {
+    --bg: #020617;
+    --card: #020617;
+    --primary: #2563eb;
+    --danger: #dc2626;
+    --success: #16a34a;
+    --text: #e5e7eb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #020617, #020617);
+    color: var(--text);
+    font-family: system-ui, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 420px;
+    background: var(--card);
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+h2, h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #020617;
+    color: white;
+}
+
+input:focus {
+    outline: 2px solid var(--primary);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+button.danger {
+    background: var(--danger);
+}
+
+.card {
+    background: #020617;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+#message {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+#message.error {
+    color: var(--danger);
+}
+
+#message.success {
+    color: var(--success);
+}
+
+#message.info {
+    color: var(--primary);
+}
