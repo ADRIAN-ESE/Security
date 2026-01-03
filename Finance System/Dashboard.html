@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="init()">
+
+<div class="container wide">
+    <header>
+        <h2 id="userTitle"></h2>
+        <div>
+            <button onclick="exportData()">Export</button>
+            <button onclick="switchAccount()">Switch</button>
+            <button class="danger" onclick="deleteAccount()">Delete</button>
+            <button class="danger" onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <div class="card">
+        <input id="desc" placeholder="Description">
+        <input id="amount" type="number" placeholder="Amount">
+        <input id="date" type="date">
+
+        <button onclick="addTransaction('income')">Add Income</button>
+        <button onclick="addTransaction('expenses')">Add Expense</button>
+    </div>
+
+    <div class="card">
+        <h3 id="summary"></h3>
+    </div>
+
+    <div class="card" id="transactions"></div>
+</div>
+
+<script src="finance.js"></script>
+</body>
+</html>
