@@ -1,0 +1,8 @@
+Port,Service,Banner
+135,Unknown,No banner
+139,NetBIOS,No banner
+445,SMB,No banner
+623,Unknown,No banner
+902,Unknown,"220 VMware Authentication Daemon Version 1.10: SSL Required, ServerDaemonProtocol:SOAP, MKSDisplayProtocol:VNC , , NFCSSL supported/t,"
+912,Unknown,"220 VMware Authentication Daemon Version 1.0, ServerDaemonProtocol:SOAP, MKSDisplayProtocol:VNC , , , 
+530 Please login with USER and PASS."
