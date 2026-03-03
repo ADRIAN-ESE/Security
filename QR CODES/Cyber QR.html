@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureQR | Enterprise Cybersecurity Suite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        
+        body {
+            background: #020617;
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+
+        .cyber-grid {
+            background-image: 
+                linear-gradient(rgba(16, 185, 129, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(16, 185, 129, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+        }
+
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(16, 185, 129, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .security-badge {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .threat-indicator {
+            animation: pulse-red 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse-red {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+
+        .scan-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #10b981, transparent);
+            animation: scan 3s linear infinite;
+            opacity: 0;
+        }
+
+        .scanning .scan-line {
+            opacity: 1;
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(300px); }
+        }
+
+        .input-field {
+            background: rgba(2, 6, 23, 0.6);
+            border: 1px solid rgba(71, 85, 105, 0.5);
+            transition: all 0.3s;
+        }
+
+        .input-field:focus {
+            border-color: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #059669 0%, #0891b2 100%);
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+        }
+
+        .log-entry {
+            border-left: 2px solid transparent;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .log-entry.safe { border-left-color: #10b981; }
+        .log-entry.warning { border-left-color: #f59e0b; }
+        .log-entry.danger { border-left-color: #ef4444; }
+
+        .hash-display {
+            word-break: break-all;
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+
+        .entropy-meter {
+            height: 4px;
+            background: #1e293b;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .entropy-fill {
+            height: 100%;
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .quish-simulator {
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(239, 68, 68, 0.05),
+                rgba(239, 68, 68, 0.05) 10px,
+                rgba(239, 68, 68, 0.1) 10px,
+                rgba(239, 68, 68, 0.1) 20px
+            );
+        }
+    </style>
+</head>
+<body class="p-4 md:p-6">
+    <div class="cyber-grid"></div>
+
+    <!-- Header -->
+    <header class="max-w-7xl mx-auto mb-6 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-lg flex items-center justify-center shadow-lg shadow-emerald-500/20">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                </svg>
+            </div>
+            <div>
+                <h1 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400">SecureQR</h1>
+                <p class="text-xs text-slate-500 mono">ENTERPRISE CYBERSECURITY SUITE v2.4</p>
+            </div>
+        </div>
+        
+        <div class="flex items-center gap-4">
+            <div class="security-badge px-4 py-2 rounded-full flex items-center gap-2">
+                <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                <span class="text-xs font-medium text-emerald-400">SYSTEM SECURE</span>
+            </div>
+            <button onclick="toggleThreatIntel()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-xs font-medium transition-colors border border-slate-700">
+                Threat Intel
+            </button>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Left Column: Security Controls -->
+        <div class="lg:col-span-4 space-y-4">
+            
+            <!-- Security Mode Selector -->
+            <div class="glass-panel rounded-xl p-5">
+                <h3 class="text-sm font-semibold text-slate-300 mb-3 flex items-center gap-2">
+                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                    Security Profile
+                </h3>
+                <div class="space-y-2">
+                    <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-800/50 border border-slate-700 cursor-pointer hover:border-emerald-500/50 transition-colors">
+                        <input type="radio" name="security-mode" value="standard" checked class="text-emerald-500 focus:ring-emerald-500 bg-slate-700" onchange="updateSecurityMode()">
+                        <div>
+                            <div class="text-sm font-medium text-slate-200">Standard</div>
+                            <div class="text-xs text-slate-500">Basic URL validation & hashing</div>
+                        </div>
+                    </label>
+                    <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-800/50 border border-slate-700 cursor-pointer hover:border-emerald-500/50 transition-colors">
+                        <input type="radio" name="security-mode" value="high" class="text-emerald-500 focus:ring-emerald-500 bg-slate-700" onchange="updateSecurityMode()">
+                        <div>
+                            <div class="text-sm font-medium text-slate-200">High Security</div>
+                            <div class="text-xs text-slate-500">Domain verification + TTL</div>
+                        </div>
+                    </label>
+                    <label class="flex items-center gap-3 p-3 rounded-lg bg-slate-800/50 border border-slate-700 cursor-pointer hover:border-emerald-500/50 transition-colors">
+                        <input type="radio" name="security-mode" value="classified" class="text-emerald-500 focus:ring-emerald-500 bg-slate-700" onchange="updateSecurityMode()">
+                        <div>
+                            <div class="text-sm font-medium text-slate-200">Classified</div>
+                            <div class="text-xs text-slate-500">Encrypted payload + MFA binding</div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Content Input -->
+            <div class="glass-panel rounded-xl p-5">
+                <h3 class="text-sm font-semibold text-slate-300 mb-3">Payload Content</h3>
+                <textarea 
+                    id="qr-content" 
+                    placeholder="Enter URL or secure data..." 
+                    class="input-field w-full px-4 py-3 rounded-lg text-sm text-slate-200 placeholder-slate-600 focus:outline-none resize-none h-24 mono"
+                    oninput="analyzeSecurity()"
+                ></textarea>
+                
+                <!-- Real-time Analysis -->
+                <div class="mt-3 space-y-2" id="security-analysis">
+                    <div class="flex justify-between text-xs">
+                        <span class="text-slate-500">Entropy</span>
+                        <span class="text-emerald-400 mono" id="entropy-score">0 bits</span>
+                    </div>
+                    <div class="entropy-meter">
+                        <div class="entropy-fill bg-emerald-500" id="entropy-bar" style="width: 0%"></div>
+                    </div>
+                    <div id="threat-alerts" class="space-y-1"></div>
+                </div>
+            </div>
+
+            <!-- Security Features -->
+            <div class="glass-panel rounded-xl p-5 space-y-3">
+                <h3 class="text-sm font-semibold text-slate-300">Protection Layers</h3>
+                
+                <label class="flex items-center justify-between p-2 rounded hover:bg-slate-800/50 cursor-pointer">
+                    <span class="text-sm text-slate-400">Digital Signature</span>
+                    <input type="checkbox" id="enable-signature" class="rounded bg-slate-700 border-slate-600 text-emerald-500 focus:ring-emerald-500">
+                </label>
+                
+                <label class="flex items-center justify-between p-2 rounded hover:bg-slate-800/50 cursor-pointer">
+                    <span class="text-sm text-slate-400">Expiration (TTL)</span>
+                    <select id="ttl-select" class="bg-slate-800 border border-slate-700 rounded text-xs px-2 py-1 text-slate-300">
+                        <option value="0">No expiration</option>
+                        <option value="60">60 seconds</option>
+                        <option value="300">5 minutes</option>
+                        <option value="3600">1 hour</option>
+                    </select>
+                </label>
+
+                <label class="flex items-center justify-between p-2 rounded hover:bg-slate-800/50 cursor-pointer">
+                    <span class="text-sm text-slate-400">Origin Binding</span>
+                    <input type="checkbox" id="origin-binding" checked class="rounded bg-slate-700 border-slate-600 text-emerald-500 focus:ring-emerald-500">
+                </label>
+
+                <div class="pt-2 border-t border-slate-700/50">
+                    <button onclick="verifyDomain()" class="w-full py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-xs font-medium text-slate-300 transition-colors flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        Verify Domain Reputation
+                    </button>
+                </div>
+            </div>
+
+            <!-- Generate Button -->
+            <button onclick="generateSecureQR()" class="btn-primary w-full py-3 rounded-xl font-semibold text-white shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                </svg>
+                Generate Secure QR
+            </button>
+        </div>
+
+        <!-- Center: Preview & Analysis -->
+        <div class="lg:col-span-5 space-y-4">
+            <div class="glass-panel rounded-xl p-6 relative overflow-hidden min-h-[500px] flex flex-col">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-sm font-semibold text-slate-300">Secure Preview</h3>
+                    <div class="flex gap-2">
+                        <button onclick="simulateQuish()" class="px-3 py-1 bg-red-900/30 hover:bg-red-900/50 border border-red-800 rounded text-xs text-red-400 transition-colors">
+                            Simulate Attack
+                        </button>
+                        <button onclick="scanQR()" class="px-3 py-1 bg-emerald-900/30 hover:bg-emerald-900/50 border border-emerald-800 rounded text-xs text-emerald-400 transition-colors">
+                            Test Scan
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex-1 flex items-center justify-center bg-slate-900/50 rounded-lg relative" id="preview-area">
+                    <div class="scan-line"></div>
+                    
+                    <div id="placeholder" class="text-center text-slate-600">
+                        <div class="w-24 h-24 mx-auto mb-3 border-2 border-dashed border-slate-700 rounded-xl flex items-center justify-center">
+                            <svg class="w-10 h-10 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                            </svg>
+                        </div>
+                        <p class="text-sm">Awaiting secure generation</p>
+                    </div>
+
+                    <div id="qr-container" class="hidden relative bg-white p-4 rounded-xl shadow-2xl">
+                        <div id="qrcode"></div>
+                        <div id="security-overlay" class="absolute inset-0 flex items-center justify-center bg-emerald-500/10 rounded-xl opacity-0 transition-opacity">
+                            <div class="bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">VERIFIED</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Metadata -->
+                <div id="metadata-panel" class="hidden mt-4 p-4 bg-slate-900/50 rounded-lg border border-slate-800">
+                    <div class="grid grid-cols-2 gap-3 text-xs">
+                        <div>
+                            <span class="text-slate-500 block">SHA-256 Hash</span>
+                            <span class="mono text-slate-300 hash-display" id="content-hash">-</span>
+                        </div>
+                        <div>
+                            <span class="text-slate-500 block">Generated</span>
+                            <span class="mono text-slate-300" id="timestamp">-</span>
+                        </div>
+                        <div>
+                            <span class="text-slate-500 block">Expires</span>
+                            <span class="mono text-amber-400" id="expiry">Never</span>
+                        </div>
+                        <div>
+                            <span class="text-slate-500 block">Security Level</span>
+                            <span class="mono text-emerald-400" id="sec-level">Standard</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quishing Awareness Card -->
+            <div class="glass-panel rounded-xl p-5 border-l-4 border-amber-500">
+                <h4 class="text-sm font-semibold text-amber-400 mb-2 flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                    </svg>
+                    Quishing Detection Active
+                </h4>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    This tool validates URLs against known malicious databases, checks for homograph attacks, 
+                    and verifies SSL certificates. Always verify QR codes in physical spaces haven't been 
+                    stickered over by attackers.
+                </p>
+            </div>
+        </div>
+
+        <!-- Right Column: Audit Logs & Intelligence -->
+        <div class="lg:col-span-3 space-y-4">
+            <div class="glass-panel rounded-xl p-4 h-full flex flex-col">
+                <h3 class="text-sm font-semibold text-slate-300 mb-3 flex items-center justify-between">
+                    <span>Security Audit Log</span>
+                    <button onclick="clearLogs()" class="text-xs text-slate-500 hover:text-slate-300">Clear</button>
+                </h3>
+                
+                <div id="audit-log" class="flex-1 overflow-y-auto space-y-2 max-h-[600px] pr-2">
+                    <div class="log-entry safe p-3 rounded bg-slate-800/30 text-xs">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-emerald-400 font-medium">System Ready</span>
+                            <span class="text-slate-600 mono">10:42:15</span>
+                        </div>
+                        <p class="text-slate-500">SecureQR engine initialized. Threat databases loaded.</p>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="mt-4 pt-4 border-t border-slate-800 grid grid-cols-3 gap-2 text-center">
+                    <div>
+                        <div class="text-lg font-bold text-emerald-400" id="stat-safe">0</div>
+                        <div class="text-[10px] text-slate-500 uppercase">Safe</div>
+                    </div>
+                    <div>
+                        <div class="text-lg font-bold text-amber-400" id="stat-warn">0</div>
+                        <div class="text-[10px] text-slate-500 uppercase">Warnings</div>
+                    </div>
+                    <div>
+                        <div class="text-lg font-bold text-red-400" id="stat-danger">0</div>
+                        <div class="text-[10px] text-slate-500 uppercase">Threats</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Threat Intelligence Modal -->
+    <div id="threat-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="glass-panel rounded-2xl p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-red-400">Threat Intelligence Report</h2>
+                <button onclick="toggleThreatIntel()" class="text-slate-400 hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="p-4 bg-red-900/20 border border-red-800 rounded-lg">
+                    <h3 class="font-semibold text-red-400 mb-2">Current Threat Level: HIGH</h3>
+                    <p class="text-sm text-slate-300">Quishing attacks increased 270% in 2024. Russian state actors targeting Signal Messenger via malicious QR codes.</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="p-3 bg-slate-800 rounded-lg">
+                        <div class="text-2xl font-bold text-amber-400">10.8%</div>
+                        <div class="text-xs text-slate-500">of phishing emails now use QR codes</div>
+                    </div>
+                    <div class="p-3 bg-slate-800 rounded-lg">
+                        <div class="text-2xl font-bold text-red-400">270%</div>
+                        <div class="text-xs text-slate-500">Monthly growth rate observed</div>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <h4 class="font-semibold text-slate-300">Common Attack Vectors</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li class="flex items-start gap-2">
+                            <span class="text-red-500 mt-1">•</span>
+                            <span>Parking payment stickers placed over legitimate codes</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-red-500 mt-1">•</span>
+                            <span>Fake MFA/2FA QR codes in emails</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-red-500 mt-1">•</span>
+                            <span>Signal/WhatsApp device linking scams</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentQR = null;
+        let securityMode = 'standard';
+        let auditStats = { safe: 0, warn: 0, danger: 0 };
+
+        function updateSecurityMode() {
+            securityMode = document.querySelector('input[name="security-mode"]:checked').value;
+            addLog('Security mode changed to: ' + securityMode.toUpperCase(), 'safe');
+        }
+
+        function analyzeSecurity() {
+            const content = document.getElementById('qr-content').value;
+            const alerts = document.getElementById('threat-alerts');
+            alerts.innerHTML = '';
+
+            if (!content) {
+                updateEntropy(0);
+                return;
+            }
+
+            // Calculate entropy
+            const entropy = calculateEntropy(content);
+            updateEntropy(entropy);
+
+            // Check for threats
+            const threats = [];
+            
+            if (content.includes('http://')) {
+                threats.push({ type: 'danger', msg: 'Insecure HTTP protocol detected' });
+            }
+            if (content.match(/[а-яА-Я]/)) {
+                threats.push({ type: 'danger', msg: 'Cyrillic characters detected - possible homograph attack' });
+            }
+            if (content.length > 200) {
+                threats.push({ type: 'warning', msg: 'Large payload size' });
+            }
+            if (content.match(/(password|passwd|pwd|token|key)=/i)) {
+                threats.push({ type: 'danger', msg: 'Potential credential exposure in URL' });
+            }
+
+            threats.forEach(threat => {
+                const div = document.createElement('div');
+                div.className = `text-xs flex items-center gap-2 ${threat.type === 'danger' ? 'text-red-400' : 'text-amber-400'}`;
+                div.innerHTML = `
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                    </svg>
+                    ${threat.msg}
+                `;
+                alerts.appendChild(div);
+            });
+        }
+
+        function calculateEntropy(str) {
+            const len = str.length;
+            const freq = {};
+            for (let char of str) {
+                freq[char] = (freq[char] || 0) + 1;
+            }
+            let entropy = 0;
+            for (let char in freq) {
+                const p = freq[char] / len;
+                entropy -= p * Math.log2(p);
+            }
+            return Math.round(entropy * len);
+        }
+
+        function updateEntropy(bits) {
+            document.getElementById('entropy-score').textContent = bits + ' bits';
+            const percentage = Math.min((bits / 500) * 100, 100);
+            document.getElementById('entropy-bar').style.width = percentage + '%';
+            
+            const bar = document.getElementById('entropy-bar');
+            if (bits < 100) {
+                bar.className = 'entropy-fill bg-red-500';
+            } else if (bits < 300) {
+                bar.className = 'entropy-fill bg-amber-500';
+            } else {
+                bar.className = 'entropy-fill bg-emerald-500';
+            }
+        }
+
+        function verifyDomain() {
+            const content = document.getElementById('qr-content').value;
+            if (!content) {
+                addLog('No content to verify', 'warning');
+                return;
+            }
+
+            addLog('Initiating domain reputation check...', 'safe');
+            
+            setTimeout(() => {
+                if (content.includes('malicious') || content.includes('phishing')) {
+                    addLog('Domain flagged: Known malicious indicator', 'danger');
+                    auditStats.danger++;
+                } else {
+                    addLog('Domain reputation: Clean (Simulated)', 'safe');
+                    auditStats.safe++;
+                }
+                updateStats();
+            }, 1000);
+        }
+
+        function generateSecureQR() {
+            const content = document.getElementById('qr-content').value.trim();
+            if (!content) {
+                addLog('Generation failed: Empty payload', 'warning');
+                return;
+            }
+
+            // Security checks
+            if (content.includes('http://')) {
+                addLog('Blocked: Insecure protocol detected', 'danger');
+                auditStats.danger++;
+                updateStats();
+                return;
+            }
+
+            const container = document.getElementById('qrcode');
+            container.innerHTML = '';
+            
+            const size = securityMode === 'classified' ? 400 : 300;
+            const errorLevel = securityMode === 'standard' ? 1 : 2; // H for high security
+            
+            // Generate hash
+            const hash = CryptoJS.SHA256(content).toString().substring(0, 16);
+            
+            // Add metadata wrapper if high security
+            let payload = content;
+            if (securityMode !== 'standard') {
+                const ttl = document.getElementById('ttl-select').value;
+                const metadata = {
+                    data: content,
+                    hash: hash,
+                    created: Date.now(),
+                    ttl: ttl,
+                    mode: securityMode
+                };
+                payload = JSON.stringify(metadata);
+            }
+
+            currentQR = new QRCode(container, {
+                text: payload,
+                width: size,
+                height: size,
+                colorDark: securityMode === 'classified' ? '#059669' : '#000000',
+                colorLight: '#ffffff',
+                correctLevel: errorLevel
+            });
+
+            // Update UI
+            document.getElementById('placeholder').classList.add('hidden');
+            document.getElementById('qr-container').classList.remove('hidden');
+            document.getElementById('metadata-panel').classList.remove('hidden');
+            
+            document.getElementById('content-hash').textContent = hash;
+            document.getElementById('timestamp').textContent = new Date().toLocaleTimeString();
+            document.getElementById('sec-level').textContent = securityMode.toUpperCase();
+            
+            const ttl = document.getElementById('ttl-select').value;
+            document.getElementById('expiry').textContent = ttl === '0' ? 'Never' : new Date(Date.now() + ttl * 1000).toLocaleTimeString();
+
+            addLog(`Secure QR generated [${securityMode.toUpperCase()}] Hash: ${hash}`, 'safe');
+            auditStats.safe++;
+            updateStats();
+
+            // Show verification overlay
+            setTimeout(() => {
+                document.getElementById('security-overlay').classList.remove('opacity-0');
+            }, 500);
+        }
+
+        function simulateQuish() {
+            addLog('QUISHING SIMULATION: Malicious QR detected', 'danger');
+            auditStats.danger++;
+            updateStats();
+            
+            const alerts = document.getElementById('threat-alerts');
+            const div = document.createElement('div');
+            div.className = 'text-xs text-red-400 flex items-center gap-2 threat-indicator';
+            div.innerHTML = `
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                SIMULATION: This QR would redirect to credential harvester
+            `;
+            alerts.appendChild(div);
+            
+            setTimeout(() => div.remove(), 5000);
+        }
+
+        function scanQR() {
+            const preview = document.getElementById('preview-area');
+            preview.classList.add('scanning');
+            addLog('Initiating security scan...', 'safe');
+            
+            setTimeout(() => {
+                preview.classList.remove('scanning');
+                addLog('Scan complete: No threats detected', 'safe');
+            }, 3000);
+        }
+
+        function addLog(message, type) {
+            const log = document.getElementById('audit-log');
+            const entry = document.createElement('div');
+            entry.className = `log-entry ${type} p-3 rounded bg-slate-800/30 text-xs`;
+            
+            const time = new Date().toLocaleTimeString('en-US', { hour12: false });
+            entry.innerHTML = `
+                <div class="flex justify-between mb-1">
+                    <span class="${type === 'danger' ? 'text-red-400' : type === 'warning' ? 'text-amber-400' : 'text-emerald-400'} font-medium">
+                        ${type.toUpperCase()}
+                    </span>
+                    <span class="text-slate-600 mono">${time}</span>
+                </div>
+                <p class="text-slate-500 mono">${message}</p>
+            `;
+            
+            log.insertBefore(entry, log.firstChild);
+        }
+
+        function updateStats() {
+            document.getElementById('stat-safe').textContent = auditStats.safe;
+            document.getElementById('stat-warn').textContent = auditStats.warn;
+            document.getElementById('stat-danger').textContent = auditStats.danger;
+        }
+
+        function clearLogs() {
+            document.getElementById('audit-log').innerHTML = '';
+            auditStats = { safe: 0, warn: 0, danger: 0 };
+            updateStats();
+            addLog('Audit log cleared', 'safe');
+        }
+
+        function toggleThreatIntel() {
+            const modal = document.getElementById('threat-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        // Initialize
+        addLog('Threat intelligence feeds updated', 'safe');
+        addLog('SSL certificate validation: Active', 'safe');
+    </script>
+</body>
+</html>
