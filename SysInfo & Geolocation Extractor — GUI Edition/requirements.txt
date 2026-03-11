@@ -1,0 +1,9 @@
+# Core (required)
+psutil>=5.9.0
+requests>=2.28.0
+
+# Export
+reportlab>=4.0.0      # PDF export
+
+# Map visualization (optional — install for map tab)
+tkintermapview>=1.29  # pip install tkintermapview

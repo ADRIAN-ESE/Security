@@ -1,0 +1,50 @@
+[
+  {
+    "system": {
+      "hostname": "ADRIAN",
+      "os_name": "Windows",
+      "os_version": "10.0.22621",
+      "os_release": "11",
+      "architecture": "64bit",
+      "machine": "AMD64",
+      "processor": "Intel64 Family 6 Model 142 Stepping 10, GenuineIntel",
+      "python_version": "3.12.3",
+      "boot_time": "",
+      "current_user": "User",
+      "mac_address": "98:3b:8f:e6:e7:a4"
+    },
+    "cpu": {
+      "physical_cores": 0,
+      "logical_cores": 0,
+      "max_freq_mhz": 0.0,
+      "current_freq_mhz": 0.0,
+      "usage_percent": 0.0
+    },
+    "memory": {
+      "total_gb": 0.0,
+      "available_gb": 0.0,
+      "used_gb": 0.0,
+      "percent_used": 0.0
+    },
+    "disks": [],
+    "interfaces": [],
+    "geo": {
+      "public_ip": "",
+      "country": "",
+      "country_code": "",
+      "region": "",
+      "city": "",
+      "zip_code": "",
+      "latitude": 0.0,
+      "longitude": 0.0,
+      "timezone": "",
+      "isp": "",
+      "org": "",
+      "asn": "",
+      "is_proxy": false,
+      "is_hosting": false,
+      "error": "No internet connection"
+    },
+    "generated_at": "2026-03-11 21:41:57"
+  }
+]
