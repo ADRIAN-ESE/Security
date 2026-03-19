@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>README — CyberSuite</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@300;400;500;600&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:      #05040d;
+  --s1:      #0b091a;
+  --s2:      #100e22;
+  --s3:      #16132e;
+  --violet:  #7c4dff;
+  --violet2: #b388ff;
+  --cyan:    #00e5ff;
+  --cyan2:   #18ffff;
+  --neon:    #64ffda;
+  --green:   #00e676;
+  --amber:   #ffc400;
+  --text:    #cdd6f4;
+  --text2:   #a6adc8;
+  --dim:     #45475a;
+  --dim2:    #585b70;
+  --bd:      rgba(120,80,255,0.15);
+  --bd2:     rgba(120,80,255,0.3);
+  --mono:    'JetBrains Mono', monospace;
+  --disp:    'Rajdhani', sans-serif;
+  --hero:    'Bebas Neue', sans-serif;
+  --body:    'Inter', sans-serif;
+  --glow-v:  0 0 28px rgba(124,77,255,0.35);
+  --glow-c:  0 0 28px rgba(0,229,255,0.3);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  font-weight: 300;
+  line-height: 1.75;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Background */
+.bg {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+}
+.bg-aurora {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 10% 0%, rgba(124,77,255,0.16) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 45% at 90% 100%, rgba(0,229,255,0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 70% at 50% 50%, rgba(5,4,13,0.95) 0%, var(--bg) 75%);
+  animation: aurora 22s ease-in-out infinite alternate;
+}
+@keyframes aurora { from { filter: hue-rotate(0deg); } to { filter: hue-rotate(20deg); } }
+.bg-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(124,77,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,77,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 80%);
+}
+.bg-scanlines {
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.04) 2px, rgba(0,0,0,0.04) 4px);
+}
+
+/* Layout */
+.wrap { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 0 24px 100px; }
+
+/* Header */
+header {
+  padding: 72px 0 48px;
+  border-bottom: 1px solid var(--bd);
+  margin-bottom: 56px;
+  position: relative;
+}
+header::after {
+  content: '';
+  position: absolute; bottom: -1px; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--violet) 30%, var(--cyan) 70%, transparent 100%);
+  opacity: 0.6;
+}
+.badge {
+  font-family: var(--mono); font-size: .6rem; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--cyan);
+  border: 1px solid rgba(0,229,255,0.3); border-radius: 4px;
+  padding: 4px 12px; display: inline-block; margin-bottom: 20px;
+  background: rgba(0,229,255,0.05);
+}
+h1 {
+  font-family: var(--hero);
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  letter-spacing: 6px;
+  line-height: 1;
+  background: linear-gradient(90deg, var(--violet2) 0%, var(--cyan) 60%, var(--neon) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 16px;
+}
+.subtitle {
+  font-family: var(--mono); font-size: .75rem; color: var(--dim2);
+  letter-spacing: 3px; text-transform: uppercase; margin-bottom: 28px;
+}
+.tagline {
+  font-size: 1.05rem; color: var(--text2); max-width: 600px; font-weight: 300;
+}
+
+/* Pills row */
+.pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.pill {
+  font-family: var(--mono); font-size: .6rem; letter-spacing: 1.5px;
+  text-transform: uppercase; padding: 5px 12px; border-radius: 100px;
+  border: 1px solid; display: inline-flex; align-items: center; gap: 6px;
+}
+.pill-v { color: var(--violet2); border-color: rgba(124,77,255,0.35); background: rgba(124,77,255,0.08); }
+.pill-c { color: var(--cyan);    border-color: rgba(0,229,255,0.3);    background: rgba(0,229,255,0.06); }
+.pill-g { color: var(--green);   border-color: rgba(0,230,118,0.3);    background: rgba(0,230,118,0.06); }
+.pill-a { color: var(--amber);   border-color: rgba(255,196,0,0.3);    background: rgba(255,196,0,0.06); }
+
+/* Sections */
+section { margin-bottom: 52px; }
+h2 {
+  font-family: var(--disp); font-size: 1.1rem; font-weight: 700;
+  letter-spacing: 4px; text-transform: uppercase;
+  color: var(--violet2); margin-bottom: 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+h2::before {
+  content: ''; display: block; width: 24px; height: 1px;
+  background: linear-gradient(90deg, var(--violet), transparent);
+}
+h2 .ico { font-size: 1rem; }
+
+p { color: var(--text2); margin-bottom: 14px; font-size: .95rem; }
+p:last-child { margin-bottom: 0; }
+
+/* Cards */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+.card {
+  background: rgba(11,9,26,0.7);
+  border: 1px solid var(--bd);
+  border-radius: 12px;
+  padding: 20px;
+  transition: border-color .22s, box-shadow .22s;
+  position: relative; overflow: hidden;
+}
+.card::before {
+  content: ''; position: absolute; inset: 0; opacity: 0;
+  transition: opacity .22s;
+}
+.card-v::before { background: radial-gradient(ellipse at top left, rgba(124,77,255,0.08), transparent 60%); }
+.card-c::before { background: radial-gradient(ellipse at top left, rgba(0,229,255,0.06), transparent 60%); }
+.card-g::before { background: radial-gradient(ellipse at top left, rgba(0,230,118,0.06), transparent 60%); }
+.card:hover { border-color: var(--bd2); box-shadow: var(--glow-v); }
+.card:hover::before { opacity: 1; }
+.card-ico { font-size: 1.6rem; margin-bottom: 12px; display: block; }
+.card-title { font-family: var(--disp); font-size: .9rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text); margin-bottom: 8px; }
+.card-desc { font-size: .8rem; color: var(--dim2); line-height: 1.6; }
+
+/* File table */
+.file-table { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: .75rem; }
+.file-table th {
+  text-align: left; padding: 10px 16px;
+  color: var(--dim2); letter-spacing: 2px; text-transform: uppercase; font-weight: 500;
+  border-bottom: 1px solid var(--bd); font-size: .6rem;
+}
+.file-table td { padding: 12px 16px; border-bottom: 1px solid rgba(120,80,255,0.07); vertical-align: top; }
+.file-table tr:last-child td { border-bottom: none; }
+.file-table tr:hover td { background: rgba(124,77,255,0.04); }
+.fname { color: var(--cyan); }
+.fdesc { color: var(--text2); font-family: var(--body); font-size: .8rem; font-weight: 300; }
+.ftag {
+  font-family: var(--mono); font-size: .55rem; letter-spacing: 1px;
+  text-transform: uppercase; padding: 2px 8px; border-radius: 4px;
+  display: inline-block;
+}
+.ftag-main { background: rgba(124,77,255,0.15); color: var(--violet2); border: 1px solid rgba(124,77,255,0.25); }
+.ftag-dep  { background: rgba(0,229,255,0.1);  color: var(--cyan);    border: 1px solid rgba(0,229,255,0.2); }
+
+/* Code block */
+.code-block {
+  background: var(--s1); border: 1px solid var(--bd);
+  border-radius: 10px; padding: 20px 24px;
+  font-family: var(--mono); font-size: .75rem;
+  color: var(--text2); line-height: 1.8;
+  overflow-x: auto; position: relative;
+}
+.code-block .kw  { color: var(--violet2); }
+.code-block .str { color: var(--neon); }
+.code-block .cm  { color: var(--dim); }
+
+/* Algo list */
+.algo-list { display: flex; flex-direction: column; gap: 10px; }
+.algo-row {
+  display: flex; align-items: flex-start; gap: 14px;
+  background: var(--s1); border: 1px solid var(--bd);
+  border-radius: 10px; padding: 14px 18px;
+}
+.algo-name {
+  font-family: var(--mono); font-size: .8rem; color: var(--cyan);
+  min-width: 100px; flex-shrink: 0; padding-top: 2px;
+}
+.algo-info { font-size: .82rem; color: var(--dim2); line-height: 1.6; }
+.algo-tag {
+  font-family: var(--mono); font-size: .55rem; letter-spacing: 1px;
+  text-transform: uppercase; padding: 2px 8px; border-radius: 4px;
+  margin-left: 8px; vertical-align: middle;
+}
+.tag-modern { background: rgba(124,77,255,0.12); color: var(--violet2); border: 1px solid rgba(124,77,255,0.25); }
+.tag-classic{ background: rgba(255,196,0,0.1);   color: var(--amber);   border: 1px solid rgba(255,196,0,0.25); }
+.tag-enc   { background: rgba(0,230,118,0.1);   color: var(--green);   border: 1px solid rgba(0,230,118,0.25); }
+
+/* QR list */
+.list-clean { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.list-clean li {
+  display: flex; align-items: baseline; gap: 10px;
+  font-size: .85rem; color: var(--text2);
+}
+.list-clean li::before {
+  content: '⬡'; color: var(--violet2); font-size: .65rem; flex-shrink: 0; margin-top: 2px;
+}
+
+/* Divider */
+.divider {
+  height: 1px; margin: 48px 0;
+  background: linear-gradient(90deg, transparent, var(--bd2), transparent);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--s1); }
+::-webkit-scrollbar-thumb { background: var(--bd2); border-radius: 3px; }
+
+@media (max-width: 600px) {
+  .card-grid { grid-template-columns: 1fr; }
+  h1 { font-size: 3rem; }
+}
+</style>
+</head>
+<body>
+<div class="bg">
+  <div class="bg-aurora"></div>
+  <div class="bg-grid"></div>
+  <div class="bg-scanlines"></div>
+</div>
+
+<div class="wrap">
+
+  <!-- Header -->
+  <header>
+    <span class="badge">⬡ Documentation</span>
+    <h1>CyberSuite</h1>
+    <p class="subtitle">Security Toolkit — Three Editions</p>
+    <p class="tagline">A browser-based security toolkit providing encryption, phishing analysis, and QR code generation — no server, no backend, all client-side.</p>
+    <div class="pills">
+      <span class="pill pill-v">🔐 Client-Side Only</span>
+      <span class="pill pill-c">📡 No Backend</span>
+      <span class="pill pill-g">✅ Zero Dependencies Installed</span>
+      <span class="pill pill-a">🌐 Vanilla HTML/JS</span>
+    </div>
+  </header>
+
+  <!-- Overview -->
+  <section>
+    <h2><span class="ico">📂</span> Project Files</h2>
+    <table class="file-table">
+      <thead>
+        <tr>
+          <th>File</th>
+          <th>Edition</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fname">cybersuite_v5.html</td>
+          <td><span class="ftag ftag-main">Primary</span></td>
+          <td class="fdesc">Full-featured flagship edition. Deep violet-black design with aurora background, three-tab layout (Cipher Suite, PhishGuard, QR Studio), animated UI, and polished micro-interactions.</td>
+        </tr>
+        <tr>
+          <td class="fname">cyberdeck.html</td>
+          <td><span class="ftag ftag-dep">Alternate</span></td>
+          <td class="fdesc">Alternate edition branded "CyberDeck — Security Suite". Shares the same three modules with a slightly different visual treatment and layout.</td>
+        </tr>
+        <tr>
+          <td class="fname">cipher_suite.html</td>
+          <td><span class="ftag ftag-dep">Standalone</span></td>
+          <td class="fdesc">Focused standalone cipher tool. Exposes only the encryption/decryption module — useful as a lightweight, self-contained drop-in.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Features -->
+  <section>
+    <h2><span class="ico">⬡</span> Modules</h2>
+    <div class="card-grid">
+      <div class="card card-v">
+        <span class="card-ico">🔐</span>
+        <div class="card-title">Cipher Suite</div>
+        <div class="card-desc">Encrypt and decrypt messages using four selectable algorithms. Key input, mode toggle, copy and swap utilities included.</div>
+      </div>
+      <div class="card card-c">
+        <span class="card-ico">🎣</span>
+        <div class="card-title">PhishGuard</div>
+        <div class="card-desc">Paste a suspicious email or message to receive a structured analysis: risk score, identified red flags, explanation, and a security tip.</div>
+      </div>
+      <div class="card card-g">
+        <span class="card-ico">📱</span>
+        <div class="card-title">QR Studio</div>
+        <div class="card-desc">Generate QR codes for URLs, plain text, Wi-Fi credentials (SSID + password + auth type), and vCard contacts. Live preview with download.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Cipher Algorithms -->
+  <section>
+    <h2><span class="ico">🔑</span> Cipher Algorithms</h2>
+    <p>All encryption runs in the browser via <strong style="color:var(--text)">CryptoJS 4.1.1</strong>. No data is transmitted.</p>
+    <div class="algo-list" style="margin-top:20px">
+      <div class="algo-row">
+        <span class="algo-name">AES-256</span>
+        <div class="algo-info">
+          <span class="algo-tag tag-modern">Modern</span>
+          Advanced Encryption Standard, 256-bit key. Requires a passphrase. Default algorithm — recommended for sensitive data.
+        </div>
+      </div>
+      <div class="algo-row">
+        <span class="algo-name">XOR</span>
+        <div class="algo-info">
+          <span class="algo-tag tag-classic">Classical</span>
+          Bitwise XOR cipher. Output is Base64-encoded for readability. Simple and fast; not suitable for high-security use cases.
+        </div>
+      </div>
+      <div class="algo-row">
+        <span class="algo-name">Caesar</span>
+        <div class="algo-info">
+          <span class="algo-tag tag-classic">Classical</span>
+          Substitution cipher with a configurable character shift (default: 3). Letters only; non-alpha characters are preserved.
+        </div>
+      </div>
+      <div class="algo-row">
+        <span class="algo-name">Base64</span>
+        <div class="algo-info">
+          <span class="algo-tag tag-enc">Encoding</span>
+          Encoding/decoding only — not encryption. No key required. Useful for obfuscation or data transport formatting.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PhishGuard -->
+  <section>
+    <h2><span class="ico">🎣</span> PhishGuard Detail</h2>
+    <p>Paste any email, SMS, or message body into the input area. The analyzer evaluates the content against a built-in pattern library and returns:</p>
+    <ul class="list-clean" style="margin-top:12px">
+      <li><strong style="color:var(--text)">Risk score</strong> — LOW / MEDIUM / HIGH / CRITICAL classification</li>
+      <li><strong style="color:var(--text)">Red flags</strong> — specific suspicious phrases or patterns detected</li>
+      <li><strong style="color:var(--text)">Explanation</strong> — plain-language breakdown of why it's suspicious</li>
+      <li><strong style="color:var(--text)">Security tip</strong> — contextual advice for the detected attack vector</li>
+    </ul>
+    <p style="margin-top:16px;">Analysis is entirely local — no text is sent to any external service.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- QR Studio -->
+  <section>
+    <h2><span class="ico">📱</span> QR Studio Detail</h2>
+    <p>Powered by <strong style="color:var(--text)">qrcodejs 1.0.0</strong>. Four input modes are available via sub-tabs:</p>
+    <ul class="list-clean" style="margin-top:12px">
+      <li><strong style="color:var(--text)">URL</strong> — any web address</li>
+      <li><strong style="color:var(--text)">Text</strong> — arbitrary plain text</li>
+      <li><strong style="color:var(--text)">Wi-Fi</strong> — SSID, password, and security type (WPA/WEP/None) for instant network sharing</li>
+      <li><strong style="color:var(--text)">vCard</strong> — contact card fields (name, phone, email, org, URL)</li>
+    </ul>
+    <p style="margin-top:16px;">The generated QR code renders as a live preview with a download button.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Usage -->
+  <section>
+    <h2><span class="ico">🚀</span> Usage</h2>
+    <p>No build step. No dependencies to install. Open any file directly in a browser:</p>
+    <div class="code-block">
+      <span class="cm"># Option 1 — open directly</span><br>
+      open cybersuite_v5.html<br><br>
+      <span class="cm"># Option 2 — serve locally (avoids any browser file:// quirks)</span><br>
+      <span class="kw">npx</span> serve .<br>
+      <span class="cm"># or</span><br>
+      <span class="kw">python3</span> -m http.server <span class="str">8080</span>
+    </div>
+    <p style="margin-top:16px;">External CDN assets are loaded at runtime — an internet connection is required on first load for fonts and library scripts.</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- External deps -->
+  <section>
+    <h2><span class="ico">📦</span> External Dependencies (CDN)</h2>
+    <table class="file-table">
+      <thead>
+        <tr><th>Library</th><th>Version</th><th>Used for</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fname">CryptoJS</td>
+          <td><span class="ftag ftag-main">4.1.1</span></td>
+          <td class="fdesc">AES-256 encryption and decryption in the Cipher Suite module</td>
+        </tr>
+        <tr>
+          <td class="fname">qrcodejs</td>
+          <td><span class="ftag ftag-dep">1.0.0</span></td>
+          <td class="fdesc">QR code rendering in QR Studio</td>
+        </tr>
+        <tr>
+          <td class="fname">Google Fonts</td>
+          <td><span class="ftag ftag-dep">—</span></td>
+          <td class="fdesc">Bebas Neue, Rajdhani, JetBrains Mono, Inter</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Privacy -->
+  <section>
+    <h2><span class="ico">🛡️</span> Privacy & Security Notes</h2>
+    <ul class="list-clean">
+      <li>All cryptographic operations run locally in the browser via CryptoJS — no plaintext or keys leave your device.</li>
+      <li>PhishGuard analysis is fully offline — pasted message content is never transmitted.</li>
+      <li>QR code generation is client-side — no data is sent to a QR API service.</li>
+      <li>The only external network calls are for CDN assets (fonts, CryptoJS, qrcodejs) on page load.</li>
+    </ul>
+  </section>
+
+</div>
+</body>
+</html>
