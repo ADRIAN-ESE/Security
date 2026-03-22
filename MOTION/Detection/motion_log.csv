@@ -1,0 +1,8 @@
+Timestamp,Camera,Duration (s),Objects Detected,Video File,Snapshot File
+2026-03-20_08-58-53,0,24.9,motion only,recordings\2026-03-20\cam0_2026-03-20_08-58-53.avi,snapshots\2026-03-20\cam0_2026-03-20_08-58-53.jpg
+2026-03-20_08-59-19,0,7.3,motion only,recordings\2026-03-20\cam0_2026-03-20_08-59-19.avi,snapshots\2026-03-20\cam0_2026-03-20_08-59-19.jpg
+2026-03-20_08-59-27,0,5.3,motion only,recordings\2026-03-20\cam0_2026-03-20_08-59-27.avi,snapshots\2026-03-20\cam0_2026-03-20_08-59-27.jpg
+2026-03-20_08-59-33,0,56.1,motion only,recordings\2026-03-20\cam0_2026-03-20_08-59-33.avi,snapshots\2026-03-20\cam0_2026-03-20_08-59-33.jpg
+2026-03-20_09-00-33,0,41.0,motion only,recordings\2026-03-20\cam0_2026-03-20_09-00-33.avi,snapshots\2026-03-20\cam0_2026-03-20_09-00-33.jpg
+2026-03-20_09-01-19,0,7.5,motion only,recordings\2026-03-20\cam0_2026-03-20_09-01-19.avi,snapshots\2026-03-20\cam0_2026-03-20_09-01-19.jpg
+2026-03-20_09-01-30,0,17.2,motion only,recordings\2026-03-20\cam0_2026-03-20_09-01-30.avi,snapshots\2026-03-20\cam0_2026-03-20_09-01-30.jpg

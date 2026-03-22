@@ -1,0 +1,10 @@
+# Core
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# AI object detection (YOLOv8)
+# Downloads ~6 MB model on first run
+ultralytics>=8.0.0
+
+# SMS alerts
+twilio>=8.0.0
