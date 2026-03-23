@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Information Report</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 40px; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            background: white; 
+            padding: 40px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        h1 { 
+            color: #2c3e50; 
+            border-bottom: 4px solid #3498db; 
+            padding-bottom: 15px;
+            margin-bottom: 10px;
+        }
+        h2 { 
+            color: #34495e; 
+            margin-top: 35px; 
+            border-left: 5px solid #3498db; 
+            padding-left: 15px;
+            font-size: 1.4em;
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        th, td { 
+            padding: 14px; 
+            text-align: left; 
+            border-bottom: 1px solid #e0e0e0;
+        }
+        th { 
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white; 
+            width: 40%;
+            font-weight: 600;
+        }
+        tr:hover { 
+            background-color: #f5f9ff;
+            transition: background-color 0.3s;
+        }
+        .warning { 
+            background: #fff3cd; 
+            border-left: 6px solid #ffc107; 
+            padding: 20px; 
+            margin-top: 40px; 
+            border-radius: 8px;
+            color: #856404;
+        }
+        .timestamp { 
+            color: #7f8c8d; 
+            font-style: italic;
+            font-size: 0.9em;
+            margin-bottom: 30px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+        .badge-success { background: #d4edda; color: #155724; }
+        .badge-danger { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 System Information & Geolocation Report</h1>
+        <p class="timestamp">Generated: 2026-03-23T09:22:38.354195</p>
+
+        <h2>🖥️ System Information</h2>
+        <table>
+            <tr><th>Platform</th><td>Windows</td></tr><tr><th>Platform Version</th><td>10.0.22621</td></tr><tr><th>Platform Release</th><td>11</td></tr><tr><th>Architecture</th><td>AMD64</td></tr><tr><th>Processor</th><td>Intel64 Family 6 Model 142 Stepping 10, GenuineIntel</td></tr><tr><th>Hostname</th><td>ADRIAN</td></tr><tr><th>Python Version</th><td>3.12.3</td></tr><tr><th>Node Name</th><td>ADRIAN</td></tr>
+        </table>
+
+        <h2>🌐 Network Information</h2>
+        <table>
+            <tr><th>Hostname</th><td>ADRIAN</td></tr><tr><th>Local Ip</th><td>192.168.149.211</td></tr><tr><th>Public Ip</th><td>105.117.128.235</td></tr><tr><th>Mac Address</th><td>98:3B:8F:E6:E7:A4</td></tr><tr><th>Default Gateway</th><td>192.168.149.237</td></tr>
+        </table>
+
+        <h2>📍 Geolocation Information</h2>
+        <table>
+            <tr><th>Country</th><td>Nigeria</td></tr><tr><th>Country Code</th><td>NG</td></tr><tr><th>Region</th><td>FCT</td></tr><tr><th>City</th><td>Abuja</td></tr><tr><th>Zip</th><td></td></tr><tr><th>Latitude</th><td>9.05785</td></tr><tr><th>Longitude</th><td>7.49508</td></tr><tr><th>Timezone</th><td>Africa/Lagos</td></tr><tr><th>Isp</th><td>Airtel Networks Limited</td></tr><tr><th>Organization</th><td>Airtel Networks Limited</td></tr><tr><th>Autonomous System</th><td>AS36873 Airtel Networks Limited</td></tr><tr><th>Is Mobile</th><td>Yes</td></tr><tr><th>Is Proxy</th><td>No</td></tr><tr><th>Is Hosting</th><td>Yes</td></tr>
+        </table>
+
+        <div class="warning">
+            <strong>⚠️ Security Notice:</strong> This information reveals sensitive details about your system 
+            that could be used for targeted attacks, system fingerprinting, or social engineering. 
+            Always protect this data and be cautious about sharing it publicly.
+        </div>
+    </div>
+</body>
+</html>

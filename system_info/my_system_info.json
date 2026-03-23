@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-03-23T09:22:38.354195",
+  "system": {
+    "platform": "Windows",
+    "platform_version": "10.0.22621",
+    "platform_release": "11",
+    "architecture": "AMD64",
+    "processor": "Intel64 Family 6 Model 142 Stepping 10, GenuineIntel",
+    "hostname": "ADRIAN",
+    "python_version": "3.12.3",
+    "node_name": "ADRIAN"
+  },
+  "network": {
+    "hostname": "ADRIAN",
+    "local_ip": "192.168.149.211",
+    "public_ip": "105.117.128.235",
+    "mac_address": "98:3b:8f:e6:e7:a4",
+    "default_gateway": "192.168.149.237"
+  },
+  "geolocation": {
+    "country": "Nigeria",
+    "country_code": "NG",
+    "region": "FCT",
+    "city": "Abuja",
+    "zip": "",
+    "latitude": 9.05785,
+    "longitude": 7.49508,
+    "timezone": "Africa/Lagos",
+    "isp": "Airtel Networks Limited",
+    "organization": "Airtel Networks Limited",
+    "autonomous_system": "AS36873 Airtel Networks Limited",
+    "is_mobile": true,
+    "is_proxy": false,
+    "is_hosting": true
+  }
+}
