@@ -1,0 +1,92 @@
+{
+  "url": "https://www.google.com/search?q=codewisp+ai&rlz=1C1GCEB_enNG1108NG1108&oq=&gs_lcrp=EgZjaHJvbWUqCQgCECMYJxjqAjIJCAAQIxgnGOoCMgkIARAjGCcY6gIyCQgCECMYJxjqAjIJCAMQRRg7GMIDMg8IBBAuGAMYjwEYtAIY6gIyEQgFEAAYAxhCGI8BGLQCGOoCMg8IBhAuGAMYjwEYtAIY6gIyEQgHEAAYAxhCGI8BGLQCGOoC0gEJMzQ0MGowajE1qAIIsAIB8QWHdQ91J_v8wQ&sourceid=chrome&ie=UTF-8",
+  "timestamp": "2026-05-26T16:04:50.575735",
+  "status_code": 200,
+  "all_headers": {
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "no-cache, no-store, max-age=0, must-revalidate",
+    "pragma": "no-cache",
+    "expires": "Mon, 01 Jan 1990 00:00:00 GMT",
+    "date": "Tue, 26 May 2026 15:04:54 GMT",
+    "p3p": "CP=\"This is not a P3P policy! See g.co/p3phelp for more info.\"",
+    "accept-ch": "Sec-CH-UA-Arch, Sec-CH-UA-Bitness, Sec-CH-UA-Full-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Model, Sec-CH-UA-WoW64, Sec-CH-UA-Form-Factors, Sec-CH-UA-Platform, Sec-CH-UA-Platform-Version",
+    "permissions-policy": "ch-ua-arch=*, ch-ua-bitness=*, ch-ua-full-version=*, ch-ua-full-version-list=*, ch-ua-model=*, ch-ua-wow64=*, ch-ua-form-factors=*, ch-ua-platform=*, ch-ua-platform-version=*",
+    "cross-origin-resource-policy": "same-site",
+    "content-security-policy": "require-trusted-types-for 'script';report-uri /_/ConsentHttp/cspreport, script-src 'report-sample' 'nonce-CCQNovAB2f_njt2HEu0fFQ' 'unsafe-inline';object-src 'none';base-uri 'self';report-uri /_/ConsentHttp/cspreport;worker-src 'self'",
+    "cross-origin-opener-policy": "unsafe-none",
+    "reporting-endpoints": "default=\"/_/ConsentHttp/web-reports?context=eJzjctHikmII1JBiaL15jnU6EJcsOs_aBsRdQDwHiA0VLrE6A3GRxBXWFiD-VHWDVaT6Buu3Yl82jhJfttTuQDYhHo5pb69dYBOY0TLpGJOSdlJ-YXxmSmpeSWZJZVpRfl5Jal5KaWZxalFZalG8kYGRmYGpkamegWV8gQEAaYYv8A\"",
+    "content-encoding": "gzip",
+    "server": "ESF",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "set-cookie": "NID=531=AQZQ7NEcxkbd249Hnz3dntYkFmApjSq_avlvCzt6BzGl_r9o23RJryThx1uUjiiP40eIw2Neh8QtyDpzkTKUZt1PLl4vlknGGY7xV8_3Uw10YoqzkQv00l3rkowW5YkISeSaegqRcEq_m8-Ygx_oDUm5_KHpXpYEu8cz-_SwwA3vOfdAvmWi8grNYU9ahvyqkfrQ5RpAB2PQPzGM3Ew; expires=Wed, 25-Nov-2026 15:04:54 GMT; path=/; domain=.google.com; HttpOnly",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+  },
+  "security_analysis": {
+    "strict-transport-security": {
+      "present": false,
+      "value": null,
+      "description": "Enforces HTTPS connections (HSTS)",
+      "severity": "high"
+    },
+    "content-security-policy": {
+      "present": true,
+      "value": "require-trusted-types-for 'script';report-uri /_/ConsentHttp/cspreport, script-src 'report-sample' 'nonce-CCQNovAB2f_njt2HEu0fFQ' 'unsafe-inline';object-src 'none';base-uri 'self';report-uri /_/ConsentHttp/cspreport;worker-src 'self'",
+      "description": "Prevents XSS and injection attacks",
+      "severity": "high"
+    },
+    "x-frame-options": {
+      "present": true,
+      "value": "SAMEORIGIN",
+      "description": "Protects against clickjacking",
+      "severity": "medium"
+    },
+    "x-content-type-options": {
+      "present": true,
+      "value": "nosniff",
+      "description": "Prevents MIME-type sniffing",
+      "severity": "medium"
+    },
+    "referrer-policy": {
+      "present": false,
+      "value": null,
+      "description": "Controls referrer information sent",
+      "severity": "low"
+    },
+    "permissions-policy": {
+      "present": true,
+      "value": "ch-ua-arch=*, ch-ua-bitness=*, ch-ua-full-version=*, ch-ua-full-version-list=*, ch-ua-model=*, ch-ua-wow64=*, ch-ua-form-factors=*, ch-ua-platform=*, ch-ua-platform-version=*",
+      "description": "Controls browser feature access",
+      "severity": "low"
+    },
+    "x-xss-protection": {
+      "present": true,
+      "value": "0",
+      "description": "Legacy XSS filter (older browsers)",
+      "severity": "low"
+    },
+    "cache-control": {
+      "present": true,
+      "value": "no-cache, no-store, max-age=0, must-revalidate",
+      "description": "Controls caching behavior",
+      "severity": "low"
+    },
+    "cross-origin-opener-policy": {
+      "present": true,
+      "value": "unsafe-none",
+      "description": "Isolates browsing context",
+      "severity": "medium"
+    },
+    "cross-origin-resource-policy": {
+      "present": true,
+      "value": "same-site",
+      "description": "Controls cross-origin resource sharing",
+      "severity": "medium"
+    }
+  },
+  "score": 80,
+  "error": null,
+  "final_url": "https://consent.google.com/ml?continue=https://www.google.com/search%3Fq%3Dcodewisp%2Bai%26rlz%3D1C1GCEB_enNG1108NG1108%26oq%3D%26gs_lcrp%3DEgZjaHJvbWUqCQgCECMYJxjqAjIJCAAQIxgnGOoCMgkIARAjGCcY6gIyCQgCECMYJxjqAjIJCAMQRRg7GMIDMg8IBBAuGAMYjwEYtAIY6gIyEQgFEAAYAxhCGI8BGLQCGOoCMg8IBhAuGAMYjwEYtAIY6gIyEQgHEAAYAxhCGI8BGLQCGOoC0gEJMzQ0MGowajE1qAIIsAIB8QWHdQ91J_v8wQ%26sourceid%3Dchrome%26ie%3DUTF-8&gl=NG&m=0&pc=srp&uxe=none&cm=2&hl=en&src=1"
+}
