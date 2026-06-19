@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SecureOps Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
+<style>
+  :root {
+    --bg: #0b0f14; --panel: #11161d; --line: #1f2733; --text: #d7e0ea;
+    --muted: #6b7785; --low: #3b82f6; --medium: #f59e0b; --high: #f97316; --critical: #ef4444;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: 'SF Mono', Consolas, monospace; }
+  header { padding: 16px 24px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
+  header h1 { font-size: 16px; letter-spacing: 0.08em; margin: 0; text-transform: uppercase; }
+  #status { font-size: 12px; color: var(--muted); }
+  .grid { display: grid; grid-template-columns: 1.1fr 1.6fr; gap: 16px; padding: 16px 24px; }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 14px; }
+  .panel h2 { font-size: 12px; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; letter-spacing: 0.06em; }
+  .counts { display: flex; gap: 10px; flex-wrap: wrap; }
+  .count { flex: 1; min-width: 90px; padding: 10px; border-radius: 4px; background: #0e131a; border: 1px solid var(--line); text-align: center; }
+  .count .n { font-size: 22px; font-weight: 600; }
+  .Low .n { color: var(--low); } .Medium .n { color: var(--medium); }
+  .High .n { color: var(--high); } .Critical .n { color: var(--critical); }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  td, th { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: left; }
+  th { color: var(--muted); font-weight: 500; }
+  .sev { padding: 2px 6px; border-radius: 3px; font-size: 11px; }
+  .sev.Low { background: rgba(59,130,246,.15); color: var(--low); }
+  .sev.Medium { background: rgba(245,158,11,.15); color: var(--medium); }
+  .sev.High { background: rgba(249,115,22,.15); color: var(--high); }
+  .sev.Critical { background: rgba(239,68,68,.15); color: var(--critical); }
+  #events { max-height: 480px; overflow-y: auto; }
+  .indicators { color: var(--muted); font-size: 11px; }
+  .flash { animation: flash 0.6s ease-out; }
+  @keyframes flash { from { background: rgba(59,130,246,.12); } to { background: transparent; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>SecureOps Dashboard</h1>
+  <div id="status">connecting…</div>
+</header>
+
+<div class="grid">
+  <div class="panel">
+    <h2>Alert Distribution</h2>
+    <div class="counts" id="alertCounts"></div>
+    <h2 style="margin-top:16px">Threat Distribution</h2>
+    <div class="counts" id="threatCounts"></div>
+    <h2 style="margin-top:16px">Top Sources</h2>
+    <table id="sourceTable"><tbody></tbody></table>
+    <h2 style="margin-top:16px">Storage</h2>
+    <div class="indicators" id="storageInfo"></div>
+  </div>
+
+  <div class="panel">
+    <h2>Live Events</h2>
+    <div id="events">
+      <table>
+        <thead><tr><th>Time</th><th>Severity</th><th>Type</th><th>Source</th><th>Threat</th></tr></thead>
+        <tbody id="eventBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+const socket = io();
+const statusEl = document.getElementById('status');
+const eventBody = document.getElementById('eventBody');
+
+socket.on('connect', () => statusEl.textContent = 'live');
+socket.on('disconnect', () => statusEl.textContent = 'disconnected');
+
+function renderCounts(containerId, counts) {
+  const el = document.getElementById(containerId);
+  el.innerHTML = Object.entries(counts).map(([level, n]) =>
+    `<div class="count ${level}"><div class="n">${n}</div><div>${level}</div></div>`
+  ).join('');
+}
+
+function renderSources(sources) {
+  const tbody = document.querySelector('#sourceTable tbody');
+  tbody.innerHTML = Object.entries(sources).map(([src, n]) =>
+    `<tr><td>${src}</td><td>${n}</td></tr>`
+  ).join('');
+}
+
+function addEventRow(event, threat) {
+  const row = document.createElement('tr');
+  row.className = 'flash';
+  const time = new Date(event.timestamp).toLocaleTimeString();
+  const indicators = (threat.indicators || []).join('; ') || '—';
+  row.innerHTML = `
+    <td>${time}</td>
+    <td><span class="sev ${event.severity}">${event.severity}</span></td>
+    <td>${event.event_type}</td>
+    <td>${event.source}</td>
+    <td><span class="sev ${threat.threat_level}">${threat.threat_level}</span>
+        <div class="indicators">${indicators}</div></td>`;
+  eventBody.prepend(row);
+  while (eventBody.rows.length > 50) eventBody.deleteRow(-1);
+}
+
+function applySnapshot(snap) {
+  renderCounts('alertCounts', snap.alert_counts);
+  renderCounts('threatCounts', snap.threat_counts);
+  renderSources(snap.source_counts);
+  document.getElementById('storageInfo').textContent =
+    `${snap.storage_size} bytes on disk · ${snap.total_operations} cipher ops performed`;
+  eventBody.innerHTML = '';
+  const threatsById = Object.fromEntries((snap.recent_threats || []).map(t => [t.event_id, t]));
+  (snap.recent_events || []).forEach(e => addEventRow(e, threatsById[e.event_id] || { threat_level: 'Low', indicators: [] }));
+}
+
+socket.on('initial_data', applySnapshot);
+socket.on('new_event', (payload) => addEventRow(payload.event, payload.threat));
+
+setInterval(async () => {
+  const res = await fetch('/api/snapshot');
+  applySnapshot(await res.json());
+}, 10000);
+</script>
+</body>
+</html>
