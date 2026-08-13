@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Ransomware Detection System
+    </title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #0f172a;
+
+            color: #e2e8f0;
+
+        }
+
+
+        /* ==================================================
+           HEADER
+        ================================================== */
+
+        .header {
+
+            background: #111827;
+
+            padding: 25px 40px;
+
+            border-bottom:
+                1px solid #334155;
+
+        }
+
+
+        .header h1 {
+
+            margin: 0;
+
+            font-size: 28px;
+
+        }
+
+
+        .header p {
+
+            margin-top: 8px;
+
+            color: #94a3b8;
+
+        }
+
+
+        /* ==================================================
+           CONTAINER
+        ================================================== */
+
+        .container {
+
+            max-width: 1400px;
+
+            margin: auto;
+
+            padding: 30px;
+
+        }
+
+
+        /* ==================================================
+           STATUS
+        ================================================== */
+
+        .status {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items: center;
+
+            background: #064e3b;
+
+            border:
+                1px solid #10b981;
+
+            border-radius: 10px;
+
+            padding: 20px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .status-title {
+
+            font-size: 14px;
+
+            color: #a7f3d0;
+
+        }
+
+
+        .status-value {
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+        }
+
+
+        .live {
+
+            font-size: 13px;
+
+            color: #6ee7b7;
+
+        }
+
+
+        /* ==================================================
+           CARDS
+        ================================================== */
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .card {
+
+            background: #1e293b;
+
+            border:
+                1px solid #334155;
+
+            border-radius: 10px;
+
+            padding: 25px;
+
+        }
+
+
+        .card-title {
+
+            color: #94a3b8;
+
+            font-size: 13px;
+
+        }
+
+
+        .card-value {
+
+            font-size: 35px;
+
+            font-weight: bold;
+
+            margin-top: 10px;
+
+        }
+
+
+        /* ==================================================
+           GRID
+        ================================================== */
+
+        .grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 25px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .section {
+
+            background: #1e293b;
+
+            border:
+                1px solid #334155;
+
+            border-radius: 10px;
+
+            padding: 25px;
+
+            overflow-x: auto;
+
+        }
+
+
+        .section h2 {
+
+            margin-top: 0;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        /* ==================================================
+           RISK BARS
+        ================================================== */
+
+        .risk-row {
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .risk-label {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            margin-bottom: 7px;
+
+            font-size: 13px;
+
+        }
+
+
+        .bar {
+
+            height: 12px;
+
+            background: #334155;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+        }
+
+
+        .bar-fill {
+
+            height: 100%;
+
+            width: 0%;
+
+            transition:
+                width 0.5s ease;
+
+        }
+
+
+        .low-bar {
+
+            background: #10b981;
+
+        }
+
+
+        .medium-bar {
+
+            background: #f59e0b;
+
+        }
+
+
+        .high-bar {
+
+            background: #ef4444;
+
+        }
+
+
+        .critical-bar {
+
+            background: #dc2626;
+
+        }
+
+
+        /* ==================================================
+           TABLE
+        ================================================== */
+
+        table {
+
+            width: 100%;
+
+            border-collapse:
+                collapse;
+
+        }
+
+
+        th,
+        td {
+
+            text-align: left;
+
+            padding: 13px;
+
+            border-bottom:
+                1px solid #334155;
+
+        }
+
+
+        th {
+
+            color: #94a3b8;
+
+            font-size: 13px;
+
+        }
+
+
+        tr:hover {
+
+            background:
+                rgba(51, 65, 85, 0.35);
+
+        }
+
+
+        /* ==================================================
+           INCIDENT LINK
+        ================================================== */
+
+        .incident-link {
+
+            color: #60a5fa;
+
+            font-weight: bold;
+
+            text-decoration: none;
+
+            transition:
+                color 0.2s ease;
+
+        }
+
+
+        .incident-link:hover {
+
+            color: #93c5fd;
+
+            text-decoration:
+                underline;
+
+        }
+
+
+        .view-link {
+
+            display: inline-block;
+
+            padding:
+                6px 10px;
+
+            border-radius: 5px;
+
+            background: #334155;
+
+            color: #e2e8f0;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+        }
+
+
+        .view-link:hover {
+
+            background: #475569;
+
+        }
+
+
+        /* ==================================================
+           RISK LABELS
+        ================================================== */
+
+        .risk {
+
+            font-weight: bold;
+
+            padding:
+                5px 9px;
+
+            border-radius: 5px;
+
+        }
+
+
+        .low {
+
+            background: #064e3b;
+
+            color: #6ee7b7;
+
+        }
+
+
+        .medium {
+
+            background: #78350f;
+
+            color: #fcd34d;
+
+        }
+
+
+        .high {
+
+            background: #7f1d1d;
+
+            color: #fca5a5;
+
+        }
+
+
+        .critical {
+
+            background: #450a0a;
+
+            color: #fecaca;
+
+        }
+
+
+        /* ==================================================
+           FILE PATH
+        ================================================== */
+
+        .path {
+
+            max-width: 500px;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+            white-space: nowrap;
+
+        }
+
+
+        .empty {
+
+            color: #94a3b8;
+
+            padding: 20px 0;
+
+        }
+
+
+        /* ==================================================
+           FOOTER
+        ================================================== */
+
+        .footer {
+
+            text-align: center;
+
+            color: #64748b;
+
+            padding: 25px;
+
+        }
+
+
+        /* ==================================================
+           RESPONSIVE
+        ================================================== */
+
+        @media (max-width: 900px) {
+
+            .cards {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+
+            .grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .cards {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .container {
+
+                padding: 15px;
+
+            }
+
+
+            .header {
+
+                padding: 20px;
+
+            }
+
+
+            .status {
+
+                display: block;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ======================================================
+     HEADER
+======================================================= -->
+
+<div class="header">
+
+    <h1>
+        🛡 Ransomware Detection System
+    </h1>
+
+    <p>
+        Behavioral monitoring and security analysis dashboard
+    </p>
+
+</div>
+
+
+<div class="container">
+
+
+    <!-- ==================================================
+         SYSTEM STATUS
+    =================================================== -->
+
+    <div class="status">
+
+        <div>
+
+            <div class="status-title">
+                SYSTEM STATUS
+            </div>
+
+            <div class="status-value">
+                🟢 MONITORING
+            </div>
+
+        </div>
+
+
+        <div class="live">
+
+            ● LIVE
+
+            <br>
+
+            Updating every 3 seconds
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================================================
+         STATISTICS
+    =================================================== -->
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <div class="card-title">
+                TOTAL FILE EVENTS
+            </div>
+
+            <div
+                class="card-value"
+                id="total-events"
+            >
+                {{ total_events }}
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-title">
+                SECURITY INCIDENTS
+            </div>
+
+            <div
+                class="card-value"
+                id="total-incidents"
+            >
+                {{ total_incidents }}
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-title">
+                HIGH RISK EVENTS
+            </div>
+
+            <div
+                class="card-value"
+                id="high-events"
+            >
+                0
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-title">
+                CRITICAL EVENTS
+            </div>
+
+            <div
+                class="card-value"
+                id="critical-events"
+            >
+                0
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ==================================================
+         RISK ANALYSIS
+    =================================================== -->
+
+    <div class="grid">
+
+
+        <div class="section">
+
+            <h2>
+                Risk Distribution
+            </h2>
+
+
+            <div class="risk-row">
+
+                <div class="risk-label">
+
+                    <span>
+                        LOW
+                    </span>
+
+                    <span id="low-count">
+                        0
+                    </span>
+
+                </div>
+
+                <div class="bar">
+
+                    <div
+                        class="bar-fill low-bar"
+                        id="low-bar"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="risk-row">
+
+                <div class="risk-label">
+
+                    <span>
+                        MEDIUM
+                    </span>
+
+                    <span id="medium-count">
+                        0
+                    </span>
+
+                </div>
+
+                <div class="bar">
+
+                    <div
+                        class="bar-fill medium-bar"
+                        id="medium-bar"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="risk-row">
+
+                <div class="risk-label">
+
+                    <span>
+                        HIGH
+                    </span>
+
+                    <span id="high-count">
+                        0
+                    </span>
+
+                </div>
+
+                <div class="bar">
+
+                    <div
+                        class="bar-fill high-bar"
+                        id="high-bar"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="risk-row">
+
+                <div class="risk-label">
+
+                    <span>
+                        CRITICAL
+                    </span>
+
+                    <span id="critical-count">
+                        0
+                    </span>
+
+                </div>
+
+                <div class="bar">
+
+                    <div
+                        class="bar-fill critical-bar"
+                        id="critical-bar"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="section">
+
+            <h2>
+                System Information
+            </h2>
+
+            <p>
+                <strong>Detection:</strong>
+                Behavioral analysis
+            </p>
+
+            <p>
+                <strong>Database:</strong>
+                SQLite
+            </p>
+
+            <p>
+                <strong>Filesystem Monitor:</strong>
+                Watchdog
+            </p>
+
+            <p>
+                <strong>Dashboard:</strong>
+                Flask
+            </p>
+
+            <p>
+                <strong>Refresh:</strong>
+                Every 3 seconds
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ==================================================
+         SECURITY INCIDENTS
+    =================================================== -->
+
+    <div class="section">
+
+        <h2>
+            Security Incidents
+        </h2>
+
+
+        {% if recent_incidents %}
+
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        ID
+                    </th>
+
+                    <th>
+                        Time
+                    </th>
+
+                    <th>
+                        Risk
+                    </th>
+
+                    <th>
+                        Score
+                    </th>
+
+                    <th>
+                        Events
+                    </th>
+
+                    <th>
+                        Modified
+                    </th>
+
+                    <th>
+                        Renamed
+                    </th>
+
+                    <th>
+                        Deleted
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                    <th>
+                        Action
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+
+            {% for incident in recent_incidents %}
+
+
+                <tr>
+
+
+                    <!-- =====================================
+                         CLICKABLE INCIDENT ID
+                    ====================================== -->
+
+                    <td>
+
+                        <a
+                            href="{{ url_for('incident_page', incident_id=incident[0]) }}"
+                            class="incident-link"
+                            title="View incident #{{ incident[0] }}"
+                        >
+
+                            #{{ incident[0] }}
+
+                        </a>
+
+                    </td>
+
+
+                    <td>
+                        {{ incident[1] }}
+                    </td>
+
+
+                    <td>
+
+                        <span
+                            class="risk
+                            {{ incident[4]|lower }}"
+                        >
+
+                            {{ incident[4] }}
+
+                        </span>
+
+                    </td>
+
+
+                    <td>
+                        {{ incident[3] }}/100
+                    </td>
+
+
+                    <td>
+                        {{ incident[5] }}
+                    </td>
+
+
+                    <td>
+                        {{ incident[6] }}
+                    </td>
+
+
+                    <td>
+                        {{ incident[7] }}
+                    </td>
+
+
+                    <td>
+                        {{ incident[8] }}
+                    </td>
+
+
+                    <td>
+                        {{ incident[11] }}
+                    </td>
+
+
+                    <td>
+
+                        <a
+                            href="{{ url_for('incident_page', incident_id=incident[0]) }}"
+                            class="view-link"
+                        >
+
+                            View
+
+                        </a>
+
+                    </td>
+
+
+                </tr>
+
+
+            {% endfor %}
+
+
+            </tbody>
+
+        </table>
+
+
+        {% else %}
+
+
+        <div class="empty">
+
+            No security incidents detected.
+
+        </div>
+
+
+        {% endif %}
+
+
+    </div>
+
+
+    <!-- ==================================================
+         RECENT FILE ACTIVITY
+    =================================================== -->
+
+    <div class="section">
+
+        <h2>
+            Recent File Activity
+        </h2>
+
+
+        {% if recent_events %}
+
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        ID
+                    </th>
+
+                    <th>
+                        Time
+                    </th>
+
+                    <th>
+                        Event
+                    </th>
+
+                    <th>
+                        Risk
+                    </th>
+
+                    <th>
+                        Score
+                    </th>
+
+                    <th>
+                        File
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+
+            {% for event in recent_events %}
+
+
+                <tr>
+
+
+                    <td>
+                        {{ event[0] }}
+                    </td>
+
+
+                    <td>
+                        {{ event[1] }}
+                    </td>
+
+
+                    <td>
+                        {{ event[2] }}
+                    </td>
+
+
+                    <td>
+
+                        <span
+                            class="risk
+                            {{ event[5]|lower }}"
+                        >
+
+                            {{ event[5] }}
+
+                        </span>
+
+                    </td>
+
+
+                    <td>
+                        {{ event[4] }}/100
+                    </td>
+
+
+                    <td
+                        class="path"
+                        title="{{ event[3] }}"
+                    >
+
+                        {{ event[3] }}
+
+                    </td>
+
+
+                </tr>
+
+
+            {% endfor %}
+
+
+            </tbody>
+
+        </table>
+
+
+        {% else %}
+
+
+        <div class="empty">
+
+            No file activity recorded.
+
+        </div>
+
+
+        {% endif %}
+
+
+    </div>
+
+
+</div>
+
+
+<div class="footer">
+
+    Ransomware Detection System —
+    Behavioral Security Monitoring
+
+</div>
+
+
+<!-- ======================================================
+     LIVE DASHBOARD JAVASCRIPT
+======================================================= -->
+
+<script>
+
+
+async function updateDashboard() {
+
+
+    try {
+
+
+        const response =
+            await fetch(
+                "/api/stats"
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Unable to retrieve dashboard statistics"
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        // ------------------------------------------------
+        // Main statistics
+        // ------------------------------------------------
+
+        document.getElementById(
+            "total-events"
+        ).textContent =
+            data.total_events;
+
+
+        document.getElementById(
+            "total-incidents"
+        ).textContent =
+            data.total_incidents;
+
+
+        // ------------------------------------------------
+        // Risk counts
+        // ------------------------------------------------
+
+        const low =
+            data.risk.low;
+
+        const medium =
+            data.risk.medium;
+
+        const high =
+            data.risk.high;
+
+        const critical =
+            data.risk.critical;
+
+
+        document.getElementById(
+            "low-count"
+        ).textContent =
+            low;
+
+
+        document.getElementById(
+            "medium-count"
+        ).textContent =
+            medium;
+
+
+        document.getElementById(
+            "high-count"
+        ).textContent =
+            high;
+
+
+        document.getElementById(
+            "critical-count"
+        ).textContent =
+            critical;
+
+
+        // ------------------------------------------------
+        // High / critical cards
+        // ------------------------------------------------
+
+        document.getElementById(
+            "high-events"
+        ).textContent =
+            high;
+
+
+        document.getElementById(
+            "critical-events"
+        ).textContent =
+            critical;
+
+
+        // ------------------------------------------------
+        // Calculate maximum
+        // ------------------------------------------------
+
+        const maximum =
+            Math.max(
+                low,
+                medium,
+                high,
+                critical,
+                1
+            );
+
+
+        // ------------------------------------------------
+        // Update bars
+        // ------------------------------------------------
+
+        document.getElementById(
+            "low-bar"
+        ).style.width =
+            `${(low / maximum) * 100}%`;
+
+
+        document.getElementById(
+            "medium-bar"
+        ).style.width =
+            `${(medium / maximum) * 100}%`;
+
+
+        document.getElementById(
+            "high-bar"
+        ).style.width =
+            `${(high / maximum) * 100}%`;
+
+
+        document.getElementById(
+            "critical-bar"
+        ).style.width =
+            `${(critical / maximum) * 100}%`;
+
+
+    }
+
+
+    catch (error) {
+
+
+        console.error(
+
+            "Dashboard update failed:",
+
+            error
+
+        );
+
+
+    }
+
+}
+
+
+// ========================================================
+// INITIAL UPDATE
+// ========================================================
+
+updateDashboard();
+
+
+// ========================================================
+// UPDATE EVERY 3 SECONDS
+// ========================================================
+
+setInterval(
+
+    updateDashboard,
+
+    3000
+
+);
+
+
+</script>
+
+
+</body>
+
+</html>
