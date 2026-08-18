@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System Log Analyzer</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+</head>
+<body>
+<header>
+  <h1>System Log Analyzer</h1>
+  <div class="upload-bar">
+    <label id="dropzone">
+      <input type="file" id="fileInput" accept=".log,.txt" hidden>
+      <span>Drop a log file here or click to upload</span>
+    </label>
+    <button id="sampleBtn">Load Sample</button>
+  </div>
+  <p id="fileInfo"></p>
+</header>
+
+<main id="dashboard" hidden>
+  <section class="cards">
+    <div class="card"><h3>Total Entries</h3><p id="statTotal">0</p></div>
+    <div class="card error"><h3>Errors</h3><p id="statErrors">0</p></div>
+    <div class="card warn"><h3>Warnings</h3><p id="statWarnings">0</p></div>
+    <div class="card"><h3>Error Rate</h3><p id="statRate">0%</p></div>
+  </section>
+
+  <section class="charts">
+    <div class="chart-box"><canvas id="levelChart"></canvas></div>
+    <div class="chart-box"><canvas id="timelineChart"></canvas></div>
+  </section>
+
+  <section class="tables">
+    <div class="side">
+      <h3>Top Errors</h3><ul id="topErrors"></ul>
+      <h3>Top Sources</h3><ul id="topSources"></ul>
+    </div>
+    <div class="log-table">
+      <div class="toolbar">
+        <input type="search" id="searchBox" placeholder="Search messages...">
+        <div id="levelFilters"></div>
+      </div>
+      <table>
+        <thead><tr><th id="sortTime">Time &#x25B4;&#x25BE;</th><th>Level</th><th>Source</th><th>Message</th></tr></thead>
+        <tbody id="logBody"></tbody>
+      </table>
+      <div class="pager">
+        <button id="prevPage">&larr; Prev</button>
+        <span id="pageInfo"></span>
+        <button id="nextPage">Next &rarr;</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

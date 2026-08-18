@@ -1,0 +1,25 @@
+Aug 18 09:00:01 web01 sshd[1021]: Accepted password for admin from 192.168.1.10 port 51234 ssh2
+Aug 18 09:05:22 web01 sshd[1035]: Failed password for invalid user root from 203.0.113.5 port 40211 ssh2
+Aug 18 09:05:25 web01 sshd[1035]: Failed password for invalid user root from 203.0.113.5 port 40212 ssh2
+Aug 18 09:12:10 db01 postgres[2210]: INFO: checkpoint starting: time
+Aug 18 09:12:14 db01 postgres[2210]: INFO: checkpoint complete: wrote 512 buffers
+Aug 18 10:01:45 app01 myapp[3344]: ERROR: database connection timeout after 30s
+Aug 18 10:01:46 app01 myapp[3344]: WARN: retrying connection (attempt 1/3)
+Aug 18 10:01:52 app01 myapp[3344]: ERROR: database connection timeout after 30s
+Aug 18 10:01:53 app01 myapp[3344]: CRITICAL: database unreachable, entering degraded mode
+Aug 18 10:15:30 web01 nginx[884]: INFO: reloading configuration
+2026-08-18 10:20:01 INFO User login successful: alice
+2026-08-18 10:21:17 DEBUG Cache miss for key user:1002
+2026-08-18 10:22:03 [WARN] Disk usage above 85% on /var/log
+2026-08-18 10:23:44 [ERROR] NullPointerException in OrderService.process
+2026-08-18 10:24:10 ERROR Payment gateway returned 502 for txn 88341
+2026-08-18 11:00:00 INFO Scheduled backup started
+2026-08-18 11:05:33 INFO Scheduled backup finished, 2.3 GB written
+192.168.1.20 - - [18/Aug/2026:11:10:05 +0000] "GET /api/users HTTP/1.1" 200 1234
+192.168.1.21 - - [18/Aug/2026:11:11:42 +0000] "POST /api/orders HTTP/1.1" 201 567
+192.168.1.22 - - [18/Aug/2026:11:12:19 +0000] "GET /missing HTTP/1.1" 404 89
+192.168.1.22 - - [18/Aug/2026:11:13:01 +0000] "GET /api/health HTTP/1.1" 500 42
+10.0.0.5 - - [18/Aug/2026:11:14:55 +0000] "GET /api/users/7 HTTP/1.1" 200 812
+2026-08-18 11:30:12 WARN Slow query detected: 4.2s on table orders
+2026-08-18 11:31:00 INFO Metrics flushed to collector
+Aug 18 11:45:09 app01 myapp[3344]: INFO: recovered, database reachable again
