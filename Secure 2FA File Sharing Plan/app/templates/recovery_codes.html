@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Recovery codes — SecureShare{% endblock %}
+{% block content %}
+<div class="card auth-card">
+  <h1>2FA is now enabled</h1>
+  <p class="warn">Save these recovery codes somewhere safe. Each works <strong>once</strong>,
+     and this is the <strong>only</strong> time they are shown.</p>
+  <ul class="codes">
+    {% for c in codes %}<li><code>{{ c }}</code></li>{% endfor %}
+  </ul>
+  <a class="btn" href="{{ url_for('files.dashboard') }}">I've saved them — continue</a>
+</div>
+{% endblock %}

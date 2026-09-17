@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Admin — SecureShare{% endblock %}
+{% block content %}
+<div class="card">
+  <h1>Security overview</h1>
+
+  <div class="stats-grid">
+    <div class="stat-box">
+      <span class="stat-label">Users</span>
+      <strong>{{ user_count }}</strong>
+    </div>
+    <div class="stat-box">
+      <span class="stat-label">Files</span>
+      <strong>{{ file_count }}</strong>
+    </div>
+    <div class="stat-box">
+      <span class="stat-label">Active shares</span>
+      <strong>{{ active_share_count }}</strong>
+    </div>
+  </div>
+
+  <div class="admin-panels">
+    <section class="panel">
+      <h2>Recent users</h2>
+      {% if recent_users %}
+      <ul class="list">
+        {% for user in recent_users %}
+        <li>{{ user.username }} — {{ user.email }} {% if user.is_2fa_enabled %}<span class="badge on small">2FA</span>{% endif %}</li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p class="muted">No users yet.</p>
+      {% endif %}
+    </section>
+
+    <section class="panel">
+      <h2>Recent files</h2>
+      {% if recent_files %}
+      <ul class="list">
+        {% for file in recent_files %}
+        <li>{{ file.original_filename }} — {{ file.size | humansize }}</li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p class="muted">No uploaded files yet.</p>
+      {% endif %}
+    </section>
+  </div>
+</div>
+{% endblock %}

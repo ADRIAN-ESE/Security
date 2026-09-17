@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Share Links — SecureShare{% endblock %}
+{% block content %}
+<div class="card">
+  <h1>Share Links</h1>
+
+  {% if files %}
+  <form class="share-form" method="post" action="{{ url_for('files.create_share') }}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label>File
+      <select name="file_id" required>
+        {% for f in files %}
+        <option value="{{ f.id }}">{{ f.original_filename }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>Expires
+      <select name="expiry">
+        <option value="1h">After 1 hour</option>
+        <option value="1d" selected>After 1 day</option>
+        <option value="7d">After 7 days</option>
+        <option value="never">Never</option>
+      </select>
+    </label>
+    <label>Max downloads
+      <select name="max_downloads">
+        <option value="1">1</option>
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="" selected>Unlimited</option>
+      </select>
+    </label>
+    <button class="btn" type="submit">Create link</button>
+  </form>
+  {% else %}
+  <p class="muted">Upload a file first, then you can share it here.</p>
+  {% endif %}
+
+  {% if links %}
+  <table class="table">
+    <thead>
+      <tr><th>File</th><th>Link</th><th>Status</th><th>Downloads</th><th class="right">Actions</th></tr>
+    </thead>
+    <tbody>
+      {% for l in links %}
+      <tr>
+        <td class="name">{{ l.file.original_filename }}</td>
+        <td>
+          {% if l.status() == 'Active' %}
+            <code class="link">{{ request.host_url }}s/{{ l.token }}</code>
+            <button class="btn small" data-copy="{{ request.host_url }}s/{{ l.token }}">Copy</button>
+          {% else %}
+            <span class="muted">—</span>
+          {% endif %}
+        </td>
+        <td><span class="status {{ l.status() | lower | replace(' ', '-') }}">{{ l.status() }}</span></td>
+        <td>{{ l.download_count }}{% if l.max_downloads %} / {{ l.max_downloads }}{% endif %}</td>
+        <td class="right actions">
+          {% if not l.revoked %}
+          <form method="post" action="{{ url_for('files.revoke_share', link_id=l.id) }}"
+                data-confirm="Revoke this share link?">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <button class="btn small danger" type="submit">Revoke</button>
+          </form>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="muted center">No share links yet.</p>
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Register — SecureShare{% endblock %}
+{% block content %}
+<div class="card auth-card">
+  <h1>Create your account</h1>
+  <p class="muted">Passwords are hashed with bcrypt. You'll set up 2FA next.</p>
+  <form method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label>Username
+      <input type="text" name="username" required maxlength="80" autocomplete="username">
+    </label>
+    <label>Email
+      <input type="email" name="email" required maxlength="255" autocomplete="email">
+    </label>
+    <label>Password <span class="muted">(min. 8 characters)</span>
+      <input type="password" name="password" required minlength="8" autocomplete="new-password">
+    </label>
+    <label>Confirm password
+      <input type="password" name="confirm" required minlength="8" autocomplete="new-password">
+    </label>
+    <button class="btn" type="submit">Create account</button>
+  </form>
+  <p class="muted center">Already have an account? <a href="{{ url_for('auth.login') }}">Log in</a></p>
+</div>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}My Files — SecureShare{% endblock %}
+{% block content %}
+<div class="card">
+  <h1>My Files</h1>
+
+  <div class="stats-grid">
+    <div class="stat-box">
+      <span class="stat-label">Files</span>
+      <strong>{{ total_files or 0 }}</strong>
+    </div>
+    <div class="stat-box">
+      <span class="stat-label">Stored</span>
+      <strong>{{ (total_size or 0) | humansize }}</strong>
+    </div>
+    <div class="stat-box">
+      <span class="stat-label">Protection</span>
+      <strong>Encrypted</strong>
+    </div>
+  </div>
+
+  <div id="dropzone" class="dropzone">
+    <p><strong>Drag &amp; drop a file here</strong> or click to browse</p>
+    <p class="muted">Max 100 MB — encrypted before it is stored.</p>
+    <input type="file" id="file-input" hidden>
+    <div class="progress"><div id="upload-progress" class="progress-bar"></div></div>
+    <p id="upload-status" class="muted"></p>
+  </div>
+
+  {% if files %}
+  <table class="table">
+    <thead>
+      <tr><th>Name</th><th>Size</th><th>Uploaded</th><th class="right">Actions</th></tr>
+    </thead>
+    <tbody>
+      {% for f in files %}
+      <tr>
+        <td class="name">{{ f.original_filename }}</td>
+        <td>{{ f.size | humansize }}</td>
+        <td>{{ f.uploaded_at.strftime('%Y-%m-%d %H:%M') }}</td>
+        <td class="right actions">
+          <a class="btn small" href="{{ url_for('files.download', file_id=f.id) }}">Download</a>
+          <form method="post" action="{{ url_for('files.delete', file_id=f.id) }}"
+                data-confirm="Delete '{{ f.original_filename }}' permanently?">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <button class="btn small danger" type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="muted center">No files yet — upload your first one above.</p>
+  {% endif %}
+</div>
+{% endblock %}

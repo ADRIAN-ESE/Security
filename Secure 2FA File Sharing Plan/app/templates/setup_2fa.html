@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Set up 2FA — SecureShare{% endblock %}
+{% block content %}
+<div class="card auth-card">
+  <h1>Set up two-factor authentication</h1>
+  <ol class="steps">
+    <li>Install an authenticator app (Google Authenticator, Authy, 1Password…).</li>
+    <li>Scan this QR code with the app:</li>
+  </ol>
+  <div class="qr-wrap">
+    <img src="data:image/png;base64,{{ qr_b64 }}" alt="TOTP QR code" width="220" height="220">
+  </div>
+  <p class="muted center">Can't scan? Enter this secret manually:</p>
+  <p class="center"><code class="secret">{{ secret }}</code></p>
+  <form method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label>Enter the 6-digit code from your app to confirm
+      <input type="text" name="code" inputmode="numeric" pattern="[0-9]{6}"
+             maxlength="6" autocomplete="one-time-code" required data-autosubmit
+             placeholder="123456">
+    </label>
+    <button class="btn" type="submit">Enable 2FA</button>
+  </form>
+  <p class="muted center"><a href="{{ url_for('files.dashboard') }}">Skip for now</a> (not recommended)</p>
+</div>
+{% endblock %}
